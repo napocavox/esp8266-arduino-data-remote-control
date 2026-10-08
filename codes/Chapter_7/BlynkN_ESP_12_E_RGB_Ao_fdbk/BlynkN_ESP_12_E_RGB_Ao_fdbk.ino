@@ -1,0 +1,69 @@
+/*
+feedback analog cu gauge pe V3, 
+
+brik fotorezistor  
++3.3v la A0
+
+*/
+#include <ESP8266WiFi.h>
+#include <BlynkSimpleEsp8266.h>
+
+#include <SimpleTimer.h>
+SimpleTimer timer;
+
+
+#define BLYNK_TEMPLATE_ID "TMPLljpFJSc-"
+#define BLYNK_TEMPLATE_NAME "4 led"
+char auth[] = "goLXmyUSeC5KoAd2antGXx6tZwLHm8Nd"; 
+char ssid[] = "UPCF4821BC";
+char pass[] = "Gherla1956";
+
+
+#define analogPin A0 //photoresistor to A0
+//#include <IRsend.h> 
+int analog = 0;
+
+void setup() {
+
+  pinMode(12, OUTPUT); // Led 1
+  pinMode(13, OUTPUT); // Led 2
+  pinMode(2, OUTPUT); // Led 3
+  pinMode(15, OUTPUT); // Led 4
+  
+  Blynk.begin(auth, ssid, pass);
+  Serial.begin(9600);
+  
+  
+  timer.setInterval(500L, sendUptime);
+
+ 
+}
+void loop() {
+  Blynk.run(); 
+ timer.run(); 
+}
+
+void sendUptime()
+{
+analog= analogRead(analogPin); 
+  //Blynk.virtualWrite(5, analog);
+  Blynk.virtualWrite(3, analog);
+  //displays on V5 the values read by the photoresistor
+}
+
+BLYNK_WRITE(V12) {
+  digitalWrite(12, param.asInt()); // led 1 
+  //in cod GPIO 12,13,14,15
+}
+BLYNK_WRITE(V13) {
+  digitalWrite(13, param.asInt()); // Led 2
+}
+
+
+BLYNK_WRITE(V15) {
+  digitalWrite(15, param.asInt()); // Led rosu
+}
+
+BLYNK_WRITE(V2) {
+  digitalWrite(2, param.asInt()); // Led albastru placa
+}

@@ -1,8 +1,8 @@
 /*
- MPU6050 de tip I2C, 
- conectat la GND, +3.3V, 
- SDA la D2 şi 
- SCL la D1, 
+ MPU6050 of I2C type,
+ connected to GND, +3.3V,
+ SDA to D2 and
+ SCL to D1,
  */
 
 #include <Wire.h>

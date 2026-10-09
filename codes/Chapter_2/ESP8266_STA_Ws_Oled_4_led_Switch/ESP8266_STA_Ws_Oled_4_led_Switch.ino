@@ -1,7 +1,7 @@
 
-/*conectare prin server local
+/*connection through local server
  * IP 192.168.0.206
- * 4 leduri pe GPIO 12, 13, 14 si led 2 placa
+ * 4 LEDs on GPIO 12, 13, 14 and board LED 2
  * */
  // Importing necessary libraries
  
@@ -140,10 +140,10 @@ digitalWrite(2, LOW);
   display.setCursor(0,0);
   display.print("GPIO=");
   display.println(inputMessage1);
-//afiseaza pinul ledului comandat
+//displays the pin of the controlled LED
   display.print("state=");
   display.print(inputMessage2);
-//afiseaza starea ledului comandat, 0 sau 1  
+//displays the state of the controlled LED, 0 or 1
   display.display();
   });
 

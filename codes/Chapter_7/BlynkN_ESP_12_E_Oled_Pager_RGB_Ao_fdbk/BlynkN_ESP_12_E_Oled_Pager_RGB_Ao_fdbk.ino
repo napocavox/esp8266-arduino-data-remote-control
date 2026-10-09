@@ -1,8 +1,8 @@
 /*
-feedback analog cu gauge pe V3, 
+analog feedback with gauge on V3,
 
 brik fotorezistor  
-+3.3v la A0
++3.3v to A0
 
 */
 
@@ -38,7 +38,7 @@ display.clearDisplay();
   display.setTextColor(WHITE);
   display.setCursor(0,0);
   
-  display.print("mesaj=");
+  display.print("message=");
   display.print(param.asStr());
   display.display();
 
@@ -57,7 +57,7 @@ display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);
   display.setTextColor(WHITE);
   display.setCursor(0,0);
   
-  display.print("Pager si comanda RGB cu feedback si Blynk");
+  display.print("Pager and RGB control with feedback and Blynk");
   
   display.display();
   

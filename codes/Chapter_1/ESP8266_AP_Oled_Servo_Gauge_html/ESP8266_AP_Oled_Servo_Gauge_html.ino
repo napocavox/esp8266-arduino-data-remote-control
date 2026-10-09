@@ -1,7 +1,7 @@
 /*
  * ESP8266 Servo Motor Control With Web Server 
  * https://circuits4you.com
- * servo pe D3 =GPIO 0
+ * servo on D3 =GPIO 0
  * genereaza server AP
  * https://circuits4you.com/2019/01/12/esp8266-servo-motor-control/
  */
@@ -31,7 +31,7 @@ ESP8266WebServer server(80);
 void handleServo(){
   String POS = server.arg("servoPOS");
   int pos = POS.toInt();
-  myservo.write(2*pos);//roteste cu 180 cu pas de 2
+  myservo.write(2*pos);//rotates by 180 in steps of 2
 
   display.clearDisplay(); 
   display.setTextSize(2);

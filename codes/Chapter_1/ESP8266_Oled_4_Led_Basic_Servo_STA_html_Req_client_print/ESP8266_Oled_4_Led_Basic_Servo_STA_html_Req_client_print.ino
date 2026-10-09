@@ -6,14 +6,14 @@
 Adafruit_SSD1306 display(-1);
 
 const char* ssid = "nume router";
-const char* password = "parola";
+const char* password = "password";
 
 #include <Servo.h>
 Servo Servo1; 
 //static const int ServoPin = 0; 
-//varianta cu servo pe D3
+//variant with servo on D3
 static const int ServoPin = 2; 
-//varianta cu servo pe D4
+//variant with servo on D4
 
 int ledPin = 15;
 int ledPin2 = 12;
@@ -62,10 +62,10 @@ delay(2000);
 }
 
 void loop() {
-  // verifica daca un client este conectat
+  // check if a client is connected
   WiFiClient client = server.available();
 
-// trimite clientului un raspuns 
+// send a response to the client
   client.println("HTTP/1.1 200 OK");
   client.println("Content-Type: text/html");
   client.println(""); //  do not forget this one
@@ -100,11 +100,11 @@ client.println("</html>");
     return;
   }
   
-  // asteapta date de la client 
+  // wait for data from the client
    while(!client.available()){
     delay(1);
   }
-  // citeste prima linie din solicitarea clientului, request
+  // read the first line of the client request, request
   String request = client.readStringUntil('\r');
   client.flush();
 
@@ -117,17 +117,17 @@ client.println("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1
 client.println("</head><body><h1>ESP8266 with Servo</h1>");
 
 client.println("<p>Position: <span id=\"servoPos\"></span></p>"); 
-//afiseaza text cu pozitia, optional
+//displays text with the position, optional
 
 
 client.println("<input type=\"range\" min=\"0\" max=\"180\" class=\"slider\" id=\"servoSlider\" onchange=\"servo(this.value)\" value=\""+request+"\"/>");
-//afiseaza slider
+//displays slider
 client.println("<script>var slider = document.getElementById(\"servoSlider\");");
 
 client.println("var servoP = document.getElementById(\"servoPos\"); servoP.innerHTML = slider.value;");
-//linia de sus furnizeaza pozitia, optional
+//the line above provides the position, optional
 client.println("slider.oninput = function() { slider.value = this.value; servoP.innerHTML = this.value; }");
-//linia de sus este legata de cea anterioara , furnizeaza pozitia doar pentr pentru afisare 
+//the line above is linked to the previous one , provides the position for display only
 
 
   
@@ -155,7 +155,7 @@ Servo1.write(valueString.toInt());
   } 
 //rotate servo 
 
-//comanda leduri
+//controls LEDs
   if (request.indexOf("/LED=ON") != -1)  {
     digitalWrite(ledPin, HIGH);
   }

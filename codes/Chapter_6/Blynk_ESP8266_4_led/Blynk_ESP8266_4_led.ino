@@ -19,7 +19,7 @@ char pass[] = "Gherla1956";
 
 //Get the button value
 BLYNK_WRITE(V12) {
-  digitalWrite(12, param.asInt()); // leduri pe D5,6,7,8
+  digitalWrite(12, param.asInt()); // LEDs on D5,6,7,8
   //in cod GPIO 12,13,14,15
 }
 BLYNK_WRITE(V13) {

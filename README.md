@@ -4,7 +4,7 @@ Codes and libraries accompanying the book **Data and Remote Control with ESP8266
 
 ## Contents
 
-- [`codes/`](codes) — the 100 Arduino sketches presented in the book, grouped by chapter (see the [index of codes](codes/README.md) with the book section and the libraries each one needs).
+- [`codes/`](codes) — the 93 Arduino sketches presented in the book, grouped by chapter (see the [index of codes](codes/README.md) with the book section and the libraries each one needs).
 - [`libraries/`](libraries) — the 18 libraries used by the author, in the tested versions (see [libraries/README.md](libraries/README.md)).
 
 ## Getting started
@@ -17,12 +17,16 @@ Codes and libraries accompanying the book **Data and Remote Control with ESP8266
 
 Wi-Fi credentials (`ssid`, `password`) and Blynk tokens in the codes must be replaced with your own.
 
+## Licence
+
+The sketches in `codes/` are released under the [MIT License](LICENSE) (c) Mihai Todică: you may use, modify and share them, keeping the copyright notice. The libraries keep their own licences. Some sketches are adapted from public examples; their sources are credited in the comments and in the book.
+
 ## Chapters
 
 1. [Server with ESP8266 and Arduino](codes/Chapter_1) — 13 codes
-2. [Asynchronous and WebSocket servers](codes/Chapter_2) — 9 codes
+2. [Asynchronous and WebSocket servers](codes/Chapter_2) — 8 codes
 3. [Servers with WebSerial library](codes/Chapter_3) — 9 codes
-4. [Peer to Peer (P2P) connections](codes/Chapter_4) — 28 codes
+4. [Peer to Peer (P2P) connections](codes/Chapter_4) — 25 codes
 5. [Gateway with ESP8266 and Arduino Uno Pro Mini](codes/Chapter_5) — 8 codes
 6. [Transmission of data and orders trough the internet](codes/Chapter_6) — 13 codes
-7. [Equivalent ESP8266 modules](codes/Chapter_7) — 20 codes
+7. [Equivalent ESP8266 modules](codes/Chapter_7) — 17 codes

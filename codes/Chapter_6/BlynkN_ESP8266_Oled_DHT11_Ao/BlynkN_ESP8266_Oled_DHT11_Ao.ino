@@ -12,7 +12,7 @@ Adafruit_SSD1306 display(-1);
 #include <DHT.h>
 #include <SimpleTimer.h>
 
-#define DHTPIN 2    //este pinul D4
+#define DHTPIN 2    //it is pin D4
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -31,7 +31,7 @@ void setup()
   Blynk.begin(auth, "UPCF4821BC", "Gherla1956"); //insert here your SSID and password
   display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);
   
-  // seteaza intervalele la care va trimite datele
+  // sets the intervals at which the data will be sent
   timer.setInterval(1000L, sendUptime);
   delay(500);
 }

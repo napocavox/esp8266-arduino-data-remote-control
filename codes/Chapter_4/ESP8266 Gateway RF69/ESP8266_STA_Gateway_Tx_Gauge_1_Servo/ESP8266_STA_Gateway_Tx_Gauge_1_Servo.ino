@@ -1,14 +1,14 @@
 /*
- * genereaza pag web cu gauge
- * trimite valorile 
+ * generates web page with gauge
+ * sends the values
  * theData.Pot_0 = valueString.toInt();  
- * de la telefon la primul modul
- * ESP8266 cu RF69 ce joaca rol de Tx
- * este receptionat de Rx incarcat cu codul
+ * from the phone to the first module
+ * ESP8266 with RF69 acting as Tx
+ * is received by Rx loaded with the code
  * ESP8266_Rx_RF69_1_Servo
 
- * s-a folosit libraria modificata
- * RFM69(modificata ESP8266)
+ * the modified library was used
+ * RFM69(modified ESP8266)
  * Modificarea apare in fila CPP
  * //void RFM69::isr0() { _haveData = true; }//original
 
@@ -17,9 +17,9 @@ ICACHE_RAM_ATTR void RFM69::isr0() { _haveData =true; }
 #else
 void RFM69::isr0() { <what ever is specified in the currentversion>}
 #endif
-//modificata
+//modified
 
-conectare RF69 la ESP8266
+RF69 connection to ESP8266
 RFM69HCW breakout ESP8266 NodeMCU ESP8266 Huzzah
 VIN VU (5V) VBAT (5V)
 GND     GND     GND
@@ -28,7 +28,7 @@ NSS     D2 (GPIO04)
 SCK     D5 (GPIO14/HSCLK) GPIO14
 MISO    D6 (GPIO12/HMISO) GPIO12
 MOSI    D7 (GPIO13/HMOSI) GPIO13
-CS      D8 (GPIO15/HCS) GPIO15 //cred ca este NSS
+CS      D8 (GPIO15/HCS) GPIO15 //I think it is NSS
 RST     D4 (GPIO02) GPIO2
  */
 
@@ -45,17 +45,17 @@ ESP8266WebServer server(80);
 #define RECEIVER      2  
 #include <RFM69.h>    // apelare librării
 #include <SPI.h>      // apelare librării
-#define NETWORKID       0     // aceeaşi pentru ambele noduri
-#define MYNODEID        1     // adresa  ID a primului nod
-#define TONODEID        2     // adresa ID a celui de al doilea nod 
+#define NETWORKID       0     // the same for both nodes
+#define MYNODEID        1     // ID address of the first node
+#define TONODEID        2     // ID address of the second node
 //#define FREQUENCY     RF69_868MHZ   //setare frecvenţă
 #define FREQUENCY     RF69_433MHZ
 
 #define ENCRYPT       true  
 #define ENCRYPTKEY    "TOPSECRETPASSWRD" 
-//stabilire password, 16-byte, acelaşi pentru ambele noduri
+//set password, 16-byte, the same for both nodes
 #define USEACK        true    
-// activare funcţia de confirmare (ACK)
+// enable the acknowledgment function (ACK)
 
 #define IS_RFM69HCW   true 
 // set to 'true' if you are using an RFM69HCW module
@@ -122,7 +122,7 @@ void setup() {
   delay(2000);
   ////////////////
 
-  Serial.begin(SERIAL_BAUD);//adaugat pentru ESP8266
+  Serial.begin(SERIAL_BAUD);//added for ESP8266
   // Hard Reset the RFM module
   pinMode(RFM69_RST, OUTPUT);
   digitalWrite(RFM69_RST, HIGH);
@@ -154,7 +154,7 @@ void setup() {
   Serial.print("Node ");  
 
   if (ENCRYPT)
-  radio.encrypt(ENCRYPTKEY);    // activare criptare, modul (AES)
+  radio.encrypt(ENCRYPTKEY);    // enable encryption, mode (AES)
 
   char buff[50];
   sprintf(buff, "\nTransmitting at %d Mhz...", FREQUENCY==RF69_433MHZ ? 433 : FREQUENCY==RF69_868MHZ ? 868 : 915);
@@ -168,7 +168,7 @@ void loop() {
     Serial.print("   [RX_RSSI:");
     Serial.print(radio.readRSSI());Serial.print("]");
     Serial.println();
-    //partea de sus este optionala
+    //the part above is optional
     
     radio.send(RECEIVER, (const void*)(&theData), sizeof(theData));  
 

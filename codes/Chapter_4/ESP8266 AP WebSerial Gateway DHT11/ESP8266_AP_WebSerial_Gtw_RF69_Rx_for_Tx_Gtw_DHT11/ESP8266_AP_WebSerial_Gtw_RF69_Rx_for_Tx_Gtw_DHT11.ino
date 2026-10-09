@@ -1,13 +1,13 @@
 /*
- * primeste date prin RF69 de 
- * la Tx cu DHT11 pe D1=GPIO5  cod
+ * receives data via RF69 from
+ * the Tx with DHT11 on D1=GPIO5  code
  * ESP8266_Gtw_RF69_Tx_DHT11_for_AP_Rx_Gtw
- * datele sunt: theData.SenzT_0=dht.readTemperature(); etc
+ * the data are: theData.SenzT_0=dht.readTemperature(); etc
  * genereaza server AP tip WebSerial
- * afiseaza pe telefon datele analog si DHT11 primite de la Tx
- * joaca ror de intermediar, nu are conectat nici un periferic
- * s-a folosit libr modificata
- * RFM69(modificata ESP8266)
+ * displays on the phone the analog and DHT11 data received from Tx
+ * acts as intermediary, has no peripheral connected
+ * a modified libr was used
+ * RFM69(modified ESP8266)
  * Modificarea apare in fila CPP
  * //void RFM69::isr0() { _haveData = true; }//original
 
@@ -17,17 +17,17 @@ ICACHE_RAM_ATTR void RFM69::isr0() { _haveData =true; }
 #else
 void RFM69::isr0() { <what ever is specified in the currentversion>}
 #endif
-//modificat acum
-conexiuni RF69 la ESP8266
+//modified now
+RF69 connections to ESP8266
  * RFM69HCW breakout ESP8266 NodeMCU ESP8266 Huzzah
 VIN VU (5V) VBAT (5V)
 GND     GND     GND
 EN      n/c     n/c
-G0      D2 (GPIO04) GPIO04 //cred ca este DIO0
+G0      D2 (GPIO04) GPIO04 //I think it is DIO0
 SCK     D5 (GPIO14/HSCLK) GPIO14
 MISO    D6 (GPIO12/HMISO) GPIO12
 MOSI    D7 (GPIO13/HMOSI) GPIO13
-CS      D8 (GPIO15/HCS) GPIO15 //cred ca este NSS
+CS      D8 (GPIO15/HCS) GPIO15 //I think it is NSS
 RST     D4 (GPIO02) GPIO2
 
  */
@@ -50,18 +50,18 @@ const char* password = "12345678"; // Your WiFi Password
 
 #include <RFM69.h>    // apelare librării
 #include <SPI.h>      // apelare librării
-#define NETWORKID       0     // acelaşi pentru ambele noduri
-#define MYNODEID        2   // adresa  ID a primului nod
-#define TONODEID        1     // adresa ID a celui de al doilea nod 
+#define NETWORKID       0     // the same for both nodes
+#define MYNODEID        2   // ID address of the first node
+#define TONODEID        1     // ID address of the second node
 //#define FREQUENCY     RF69_868MHZ   //setare frecvenţă
 #define FREQUENCY     RF69_433MHZ
 
 #define ENCRYPT       true  
 #define ENCRYPTKEY    "TOPSECRETPASSWRD" 
-//stabilire password, 16-byte, acelaşi pentru ambele noduri
-#define USEACK        true    // activare funcţia de confirmare (ACK)
+//set password, 16-byte, the same for both nodes
+#define USEACK        true    // enable the acknowledgment function (ACK)
 
-//de aici adaugat pentru ESP8266
+//added from here for ESP8266
 #define IS_RFM69HCW   true // set to 'true' if you are using an RFM69HCW module
 #define SERIAL_BAUD   115200
 
@@ -103,13 +103,13 @@ Serial.begin(115200);
     server.begin();
     delay(2000);
   
-  Serial.begin(SERIAL_BAUD);//adaugat pentru ESP8266
+  Serial.begin(SERIAL_BAUD);//added for ESP8266
 // Hard Reset the RFM module
   pinMode(RFM69_RST, OUTPUT);
   digitalWrite(RFM69_RST, HIGH);
   delay(100);
   digitalWrite(RFM69_RST, LOW);
-  delay(100);//adaugat pentru ESP8266
+  delay(100);//added for ESP8266
 
   if (!radio.initialize(FREQUENCY,MYNODEID,NETWORKID)) {
     Serial.println("radio.initialize failed!");
@@ -133,7 +133,7 @@ Serial.println(" ready");
 Serial.print("Node ");  
 
 if (ENCRYPT)
-radio.encrypt(ENCRYPTKEY);    // activare criptare, modul (AES)
+radio.encrypt(ENCRYPTKEY);    // enable encryption, mode (AES)
 
 }
 
@@ -144,7 +144,7 @@ void loop()
 
   {  
       theData = *(Payload*)radio.DATA;  
-      //linia de sus initiaza primirea datelor
+      //the line above initiates data reception
    
       Serial.print(" analog ");     
       Serial.println(theData.SenzA); 

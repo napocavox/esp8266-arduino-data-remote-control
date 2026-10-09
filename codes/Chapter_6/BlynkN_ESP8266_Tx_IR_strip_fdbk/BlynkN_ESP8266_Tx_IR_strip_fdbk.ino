@@ -1,12 +1,12 @@
-/*necesita libr IRremoteESP8266
+/*requires IRremoteESP8266 libr
  * board node mcu esp8266
  
- * led IR comandat cu BC238 si 20 ohn=mi in colector
- * baza prin 10K pe D4=GPIO2
- brik fotorezistor  GND, +3.3v, S la A0
-in Blyk joystick pe virtual V0, modul simplu cu min=-1, max=0, default=0
-feedback cu terminal pe virtial V6
-feedback analog cu gauge pe V3, 
+ * IR LED driven by BC238 with 20 ohms in the collector
+ * base through 10K on D4=GPIO2
+ photoresistor brick  GND, +3.3v, S to A0
+in Blynk joystick on virtual V0, simple mode with min=-1, max=0, default=0
+feedback with terminal on virtual V6
+analog feedback with gauge on V3,
 */
 
 #include <ESP8266WiFi.h>

@@ -1,6 +1,6 @@
 /*
- * trimite date prin RF69 de la pot pe A2 pro Mini  
- * s-a folosit libraria originala
+ * sends data via RF69 from pot on A2 pro Mini
+ * the original library was used
  * RFM69(original)
 
  */
@@ -11,17 +11,17 @@
 
 #include <RFM69.h>    // apelare librării
 #include <SPI.h>      // apelare librării
-#define NETWORKID       0     // aceeaşi pentru ambele noduri
-#define MYNODEID        1     // adresa  ID a primului nod
-#define TONODEID        2     // adresa ID a celui de al doilea nod 
+#define NETWORKID       0     // the same for both nodes
+#define MYNODEID        1     // ID address of the first node
+#define TONODEID        2     // ID address of the second node
 //#define FREQUENCY     RF69_868MHZ   //setare frecvenţă
 #define FREQUENCY     RF69_433MHZ
 
 #define ENCRYPT       true  
 #define ENCRYPTKEY    "TOPSECRETPASSWRD" 
-//stabilire password, 16-byte, acelaşi pentru ambele noduri
+//set password, 16-byte, the same for both nodes
 #define USEACK        true    
-// activare funcţia de confirmare (ACK)
+// enable the acknowledgment function (ACK)
 
 #define IS_RFM69HCW   true 
 // set to 'true' if you are using an RFM69HCW module
@@ -40,7 +40,7 @@ RFM69 radio;
  
 void setup()
 {
-  Serial.begin(SERIAL_BAUD);//adaugat pentru ESP8266
+  Serial.begin(SERIAL_BAUD);//added for ESP8266
 
   if (!radio.initialize(FREQUENCY,MYNODEID,NETWORKID)) {
     Serial.println("radio.initialize failed!");
@@ -51,7 +51,7 @@ void setup()
   radio.setPowerLevel(31); // power output ranges from 0 (5dBm) to 31 (20dBm)
 
   if (ENCRYPT)
-  radio.encrypt(ENCRYPTKEY);    // activare criptare, modul (AES)
+  radio.encrypt(ENCRYPTKEY);    // enable encryption, mode (AES)
 
   char buff[50];
   sprintf(buff, "\nTransmitting at %d Mhz...", FREQUENCY==RF69_433MHZ ? 433 : FREQUENCY==RF69_868MHZ ? 868 : 915);
@@ -63,7 +63,7 @@ void loop()
 {
     for (byte i = 0; i < radio.DATALEN; i++)
     Serial.print((char)radio.DATA[i]);   
-    //partea de sus este optionala
+    //the part above is optional
     
     theData.Pot_0 = analogRead(potpin0);                                              // assign servo position to transmit packet variable.
     radio.send(RECEIVER, (const void*)(&theData), sizeof(theData));  

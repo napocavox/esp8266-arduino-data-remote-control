@@ -10,7 +10,7 @@ const char* ssid = "nume router";
 const char* password = "password";
 
 bool ledState = 0;
-//const int ledPin = 2;//led albastru placa
+//const int ledPin = 2;//blue board LED
 const int ledPin = 13;
 
 bool ledState2 = 0;

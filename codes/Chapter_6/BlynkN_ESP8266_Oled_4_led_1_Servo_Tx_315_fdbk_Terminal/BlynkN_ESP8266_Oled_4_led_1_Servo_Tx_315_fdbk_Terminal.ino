@@ -1,12 +1,12 @@
 /*
- * butoane pe vrtual V12,13,14,15 pentru leduri
- * joystick pe V0 pentru servo mmin=-1 max=1
- * slider pe V1 pentru servo2 mmin=0 max=180
- * gauge pe V3 pentru feedback min=0 max=700
- * fdbk pe A0 de la leduri
- * terminal pe V6, afiseaza pe monitor 
- * text trimis de pe Android
- * nu am verificat servo
+ * buttons on virtual V12,13,14,15 for LEDs
+ * joystick on V0 for servo mmin=-1 max=1
+ * slider on V1 for servo2 mmin=0 max=180
+ * gauge on V3 for feedback min=0 max=700
+ * fdbk on A0 from LEDs
+ * terminal on V6, displays on monitor
+ * text sent from Android
+ * I have not checked the servo
  */
 
 #include <Adafruit_SSD1306.h>
@@ -33,8 +33,8 @@ RCSwitch mySwitch = RCSwitch();
 
 #include <Servo.h>
 
-//Servo Servo1;// pe D4 in cod GPIO2
-Servo Servo2;// pe D3 in cod GPIO0
+//Servo Servo1;// on D4, in code GPIO2
+Servo Servo2;// on D3, in code GPIO0
 
 int tetha;
 int tetha2;
@@ -58,9 +58,9 @@ BLYNK_WRITE(V0)
 
   if (param.asInt() == -1)
   { 
-   mySwitch.send("100100000110111110000011"); //merge cu acest cod 
-   //mySwitch.send(9465732, 24);//on /off de 4 ori nu stiu de ce
-   //cod tasta off birou , merge si cu binar
+   mySwitch.send("100100000110111110000011"); //works with this code
+   //mySwitch.send(9465732, 24);//on /off 4 times, I don't know why
+   //office off key code, also works with binary
    Serial.println("OFF birou");//optional
    Blynk.virtualWrite(6, " OFF office"); 
    // displays the message cod sent  
@@ -94,7 +94,7 @@ Serial.println( param.asStr());
 }
 void setup() {
   Serial.begin(115200);
-  mySwitch.enableTransmit(2);//Tx pe D4
+  mySwitch.enableTransmit(2);//Tx on D4
   display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR);
    
   timer.setInterval(200L, sendUptime); 

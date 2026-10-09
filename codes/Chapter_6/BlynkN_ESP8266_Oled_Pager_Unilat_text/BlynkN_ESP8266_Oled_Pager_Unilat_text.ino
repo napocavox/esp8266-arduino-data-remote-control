@@ -1,7 +1,7 @@
 /*
- *oled pe +3.3V, GND, D1 si D2 fara definitie
- * terminal pe V6, afiseaza pe Oled
- * text trimis de pe Android cu Terminal pe V6
+ *oled on +3.3V, GND, D1 and D2 without definition
+ * terminal on V6, displays on Oled
+ * text sent from Android with Terminal on V6
  */
 
 #include <Adafruit_SSD1306.h>
@@ -30,7 +30,7 @@ display.clearDisplay();
   display.setTextColor(WHITE);
   display.setCursor(0,0);
   
-  display.print("mesaj=");
+  display.print("message=");
   display.print(param.asStr());
   display.display();
 
@@ -44,7 +44,7 @@ void setup() {
   display.setTextColor(WHITE);
   display.setCursor(0,0);
   
-  display.print("Pager unilateral cu Blynk terminal V6");
+  display.print("One-way pager with Blynk terminal V6");
   
   display.display();
   

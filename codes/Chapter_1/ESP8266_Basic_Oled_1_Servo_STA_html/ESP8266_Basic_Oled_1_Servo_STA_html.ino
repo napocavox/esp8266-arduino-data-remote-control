@@ -1,7 +1,7 @@
 /*********
  
- * servo pe D3 in cod zero
- * genereaza server cu IP 192.168.0.80
+ * servo on D3, in code zero
+ * generates server with IP 192.168.0.80
  * prin router local
 *********/
 #include <ESP8266WiFi.h> 
@@ -10,7 +10,7 @@
 Servo Servo1; 
 static const int ServoPin = 0; 
 const char* ssid = "nume router";
-const char* password = "parola";
+const char* password = "password";
 
 WiFiServer server(80);
 String request;
@@ -71,26 +71,26 @@ client.println("<link rel=\"icon\" href=\"data:,\">");
 
 client.println("<style>body { text-align: center; font-family: \"Trebuchet MS\", Arial; margin-left:auto; margin-right:auto;}");
 client.println(".slider { width: 300px; }</style>");
-//liniile style editeaza un slider mai mare
+//the style lines edit a larger slider
 
 client.println("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>");
-//liniile script sunt necesare
+//the script lines are required
 // Web Page
 client.println("</head><body><h1>ESP8266 with Servo</h1>");
-//afiseaza titlul, optional
+//displays the title, optional
 
 //client.println("<p>Position: <span id=\"servoPos\"></span></p>"); 
-//afiseaza text cu pozitia, optional
+//displays text with the position, optional
 
 client.println("<input type=\"range\" min=\"0\" max=\"180\" class=\"slider\" id=\"servoSlider\" onchange=\"servo(this.value)\" value=\""+valueString+"\"/>");
 
 client.println("<script>var slider = document.getElementById(\"servoSlider\");");
 
 //client.println("var servoP = document.getElementById(\"servoPos\"); servoP.innerHTML = slider.value;");
-//linia de sus furnizeaza pozitia, optional
+//the line above provides the position, optional
 
 //client.println("slider.oninput = function() { slider.value = this.value; servoP.innerHTML = this.value; }");
-//linia de sus este legata de cea anterioara , furnizeaza pozitia pentru doar afisare 
+//the line above is linked to the previous one , provides the position for display only
 
 client.println("$.ajaxSetup({timeout:1000}); function servo(pos) { ");
 

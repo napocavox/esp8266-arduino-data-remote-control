@@ -1,25 +1,25 @@
 
-/*necesita libr rc_switch 
- * NU merge cu libr veche RCswitch
+/*requires rc_switch libr
+ * does NOT work with the old libr RCswitch
  * Tx 315 Mhz,  antena L/4=23cm
- * Atentie, modulul 
- * trebuie alimentata cu 5V
- * altfel nu merge
- * Rx Data conectata la D4 definit in cod GPIO 2
+ * Attention, the module
+ * must be powered with 5V
+ * otherwise it does not work
+ * Rx Data connected to D4, defined in code GPIO 2
  * 
- * genereaza pag html cu 4 butoane
- *  pentru TLC 4 canale, 
+ * generates html page with 4 buttons
+ *  for 4-channel TLC,
  * 
- * se mareste talia fontuluifolosind linia
+ * the font size is increased using the line
  * client.println("<a href=\"/LED=ON\"\"><button=\" button style=\"font-size:400%\">Turn On </button></a><br />");
- in loc de 
+ instead of
  client.println("<a href=\"/LED=ON\"\"><button>Turn On </button></a><br />");
- <br/> inseamna linie noua
- linia client.println("<br><br>"); introduce spatii intre butoane
+ <br/> means new line
+ the line client.println("<br><br>"); inserts spaces between buttons
 
- pentru scris central folosesc linia
+ for centered text I use the line
  client.println("<center><a href=\"/LED=ON\"\"><button=\"button style=\"font-size:400%\">Turn On </button></a>");
-  la stanga
+  on the left
   client.println("<left><a href=\"/LED=ON\"\"><button=\"button style=\"font-size:400%\">Turn On </button></a>");
   
  */
@@ -78,7 +78,7 @@ delay(2000);
 }
 
 void loop() {
-  // verifica daca un client este conectat
+  // check if a client is connected
   WiFiClient client = server.available();
   if (!client) {
     return;

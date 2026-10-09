@@ -1,24 +1,24 @@
 /*
   genereaza server Acces Point AP 
-  cu 
+  with
   IP 192.168.4.1
    //biblio partial
    https://randomnerdtutorials.com/control-a-12v-lamp-via-sms-with-arduino/
-  dupa incarcare pe Oled si Serial monitor apare adresa IP 192.169.4.1
-  se deschide pe Android Chrome
-  se introdice 192.168.4.1/webserial
+  after upload, the IP address 192.169.4.1 appears on Oled and Serial monitor
+  open Chrome on Android
+  enter 192.168.4.1/webserial
   apare pagina web
-  tot ce este editat pe telefon apare 
-  pe Serial Monitor si pe Oled
+  everything edited on the phone appears
+  on Serial Monitor and on Oled
 
- comanda RGB legat la D5=GPIO 12, D6, D7
- Servo la D4 =GPIO2
- servo comandat cu unghiuri predefinite
+ controls RGB connected to D5=GPIO 12, D6, D7
+ Servo to D4 =GPIO2
+ servo controlled with predefined angles
  prin mesaje 20, 120, etc 
- trebuie respectata ortografia, majuscule, minuscule
-trimite date culese pe pinul A0 
-dar numai cand
-se trimite vreun text de pe telefon
+ spelling, uppercase and lowercase must be respected
+sends data collected on pin A0
+but only when
+some text is sent from the phone
 */
 #include <Servo.h>
 Servo Servo0;
@@ -122,14 +122,14 @@ if(d.indexOf("120")>=0){
     ///////////////////////
   display.clearDisplay();
   display.setTextSize(2);
-  display.setTextColor(WHITE);//trebuie
+  display.setTextColor(WHITE);//required
   display.setCursor(0,0);
   display.print("Primit=");
-  display.print(d);//afiseaza text tranmmsis pe oled
+  display.print(d);//displays transmitted text on oled
   display.display();
   }
   WebSerial.println(d);
-  //float analog = analogRead(A0);  //varianta                                            // assign servo position to transmit packet variable.
+  //float analog = analogRead(A0);  //variant                                            // assign servo position to transmit packet variable.
   float analog = map(analogRead(potpin0), 0, 1023, 0, 3300);                        
   WebSerial.print("Us=");
   WebSerial.print(analog); 

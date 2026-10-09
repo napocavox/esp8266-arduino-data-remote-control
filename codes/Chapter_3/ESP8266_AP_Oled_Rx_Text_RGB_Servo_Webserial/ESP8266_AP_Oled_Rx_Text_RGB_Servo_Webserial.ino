@@ -1,20 +1,20 @@
 /*
-  genereaza Hot Spot AP cu 
+  generates Hot Spot AP with
   IP 192.168.4.1
    biblio 
    https://randomnerdtutorials.com/control-a-12v-lamp-via-sms-with-arduino/
-  dupa incarcare pe Oled si Serial monitor apare adresa IP 192.169.4.1
-  se deschide pe Android o pagina Chrome
-  se introdice 192.168.4.1/webserial
+  after upload, the IP address 192.169.4.1 appears on Oled and Serial monitor
+  open a Chrome page on Android
+  enter 192.168.4.1/webserial
   apare pagina web
-  tot ce este editat pe telefon apare 
-  pe Serial Monitor si pe Oled
+  everything edited on the phone appears
+  on Serial Monitor and on Oled
 
- comanda RGB legat la D5=GPIO 12, D6, D7
- Servo la D4 =GPIO2
- servo comandat cu unghiuri predefinite
+ controls RGB connected to D5=GPIO 12, D6, D7
+ Servo to D4 =GPIO2
+ servo controlled with predefined angles
  prin mesaje 20, 120, etc 
- trebuie respectata ortografia, majuscule, minuscule
+ spelling, uppercase and lowercase must be respected
 
 */
 #include <Servo.h>
@@ -115,10 +115,10 @@ if(d.indexOf("120")>=0){
     
     display.clearDisplay();
   display.setTextSize(2);
-  display.setTextColor(WHITE);//trebuie
+  display.setTextColor(WHITE);//required
   display.setCursor(0,0);
   display.print("Primit=");
-  display.print(d);//afiseaza text tranmmsis pe oled
+  display.print(d);//displays transmitted text on oled
   display.display();
   }
   WebSerial.println(d);

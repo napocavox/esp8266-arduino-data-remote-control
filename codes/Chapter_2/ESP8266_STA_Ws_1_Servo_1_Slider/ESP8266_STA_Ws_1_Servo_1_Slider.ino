@@ -1,6 +1,6 @@
 /*
- * servo pe D8=GPIO15 
- * comandat cu slider
+ * servo on D8=GPIO15
+ * controlled with slider
  */
 #include <Servo.h>
 Servo Servo0;
@@ -57,7 +57,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
     
     USE_SERIAL.begin(115200);
 
-    WiFiMulti.addAP("nume router", "parola router");
+    WiFiMulti.addAP("nume router", "router password");
     
 
     while(WiFiMulti.run() != WL_CONNECTED) {

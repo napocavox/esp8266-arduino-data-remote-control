@@ -1,24 +1,24 @@
 /*compatibil Arduino 1.8.13
- * WeMos D1 R2 cu Joystick Shield
-  buton A pe  pin D5 definit GPIO 14
-  buton B pe  pin D6 definit GPIO 4
-  buton C pe  pin D3 definit GPIO 5
-  buton D pe  pin D4 definit GPIO 16
-  Joystick pe A0
+ * WeMos D1 R2 with Joystick Shield
+  button A on  pin D5 defined GPIO 14
+  button B on  pin D6 defined GPIO 4
+  button C on  pin D3 defined GPIO 5
+  button D on  pin D4 defined GPIO 16
+  Joystick on A0
   */
   #include <ESP8266WiFi.h>
   #include <espnow.h>
   
-  //se introduce adresa MAC a receptorului 
-  //2C:3A:E8:08:D9:C5 adresa 1 modul 7
+  //enter the MAC address of the receiver
+  //2C:3A:E8:08:D9:C5 address 1 module 7
   uint8_t broadcastAddress1[] = {0x2C, 0x3A, 0xE8, 0x08, 0xD9, 0xC5};
   uint8_t broadcastAddress2[] = {0x84, 0x0D, 0x8E, 0xAA, 0xA3, 0xA3};
   
-  //84:0D:8E:B0:F3:E8 adresa 3 modul A
+  //84:0D:8E:B0:F3:E8 address 3 module A
   uint8_t broadcastAddress3[] = {0x84, 0x0D, 0x8E, 0xB0, 0xF3, 0xE8};
   
-  #define analogPin A0  //Joystick conectat la A0
-  // Structura datelor trimise; trebuie să fie identică pentru Sender şi Receiver
+  #define analogPin A0  //Joystick connected to A0
+  // Structure of the sent data; must be identical for Sender and Receiver
   typedef struct test_struct {
       int x;  
       int y;  
@@ -27,7 +27,7 @@
       int w;
           } 
   test_struct;
-  // generează o structură numită test care memorează variabilele ce vor fi trimise
+  // generates a structure named test that stores the variables to be sent
   test_struct test;
   unsigned long lastTime = 0;  
   unsigned long timerDelay = 200;  
@@ -63,10 +63,10 @@
   
     test.x =  analogRead(analogPin);  //potenţiometru
    
-    test.y=digitalRead(14); //buton A 
-    test.z=digitalRead(4);  //buton B
-    test.q=digitalRead(5);  //buton C
-    test.w=digitalRead(16); //buton D
+    test.y=digitalRead(14); //button A
+    test.z=digitalRead(4);  //button B
+    test.q=digitalRead(5);  //button C
+    test.w=digitalRead(16); //button D
   
     
     esp_now_send(0, (uint8_t *) &test, sizeof(test));

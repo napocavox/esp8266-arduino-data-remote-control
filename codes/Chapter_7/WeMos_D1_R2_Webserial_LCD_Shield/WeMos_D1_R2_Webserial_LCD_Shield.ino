@@ -1,7 +1,7 @@
 // LCD shield
 //genereaza server Acces Point 
-//cu IP 192.168.4.1/webserial
-//afieaza tot ce se editeaza pe telefon
+//with IP 192.168.4.1/webserial
+//displays everything edited on the phone
 // **************************************************************/
 
 #include <Arduino.h>

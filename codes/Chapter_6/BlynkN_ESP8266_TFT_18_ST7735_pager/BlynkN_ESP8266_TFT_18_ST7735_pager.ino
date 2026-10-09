@@ -1,6 +1,6 @@
 /*
- * terminal pe V6, afiseaza pe Oled
- * text trimis de pe Android cu Terminal pe V6
+ * terminal on V6, displays on Oled
+ * text sent from Android with Terminal on V6
  */
 
 #include <Adafruit_GFX.h>      // include Adafruit graphics library
@@ -9,7 +9,7 @@
 #define TFT_RST   D4     // TFT RST pin is connected to NodeMCU pin D4 (GPIO2)
 #define TFT_CS    D3     // TFT CS  pin is connected to NodeMCU pin D4 (GPIO0)
 #define TFT_DC    D2     // TFT DC  pin is connected to NodeMCU pin D4 (GPIO4)
-//#define TFT_RST   D1    //se poate defini RST cu D1
+//#define TFT_RST   D1    //RST can be defined as D1
 //DC=A0
 // initialize ST7735 TFT library with hardware SPI module
 // SCK (CLK) ---> NodeMCU pin D5 (GPIO14)
@@ -38,14 +38,14 @@ Serial.println( param.asStr());
 //tft.initR(INITR_BLACKTAB);   // initialize a ST7735S chip, black tab//necesar
   tft.fillScreen(ST7735_BLACK);//
 //tft.fillScreen(ST7735_BLUE);
-  tft.setRotation(3);//roteste ecranul
+  tft.setRotation(3);//rotates the screen
   tft.setCursor(0, 0);
   tft.setTextSize(2);
   //tft.setTextSize(3);
   tft.drawPixel(tft.width(), tft.height(), ST7735_GREEN);
   //tft.setTextColor(ST7735_RED);
   tft.setTextColor(ST7735_YELLOW);
-  tft.setTextWrap(true);//nu suprapune
+  tft.setTextWrap(true);//no overlap
 tft.print("text=");
 tft.print(param.asStr());
 }
@@ -55,7 +55,7 @@ void setup() {
   Serial.begin(115200);
   tft.initR(INITR_BLACKTAB);   // initialize a ST7735S chip, black tab//necesar
   
-  tft.fillScreen(ST7735_BLACK);//afiseaza pe coloana
+  tft.fillScreen(ST7735_BLACK);//displays in a column
   //tft.fillScreen(ST7735_GREEN);
   tft.setCursor(0, 0);
   tft.setTextSize(2);

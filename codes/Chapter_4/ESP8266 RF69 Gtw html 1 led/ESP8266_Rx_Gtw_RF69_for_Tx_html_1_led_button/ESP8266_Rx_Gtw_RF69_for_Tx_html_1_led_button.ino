@@ -1,16 +1,16 @@
 /*
- * primeste date de la Tx care
- * genereaza pag web cu  butoane 
- * fiecare buton trimite o valoare 0 sau 1
- * de exemplu
+ * receives data from the Tx that
+ * generates web page with  buttons
+ * each button sends a value 0 or 1
+ * for example
  * theData.Pot_0 =0;
  * theData.Pot_0 =1;
 cod Tx
 ESP8266_STA_Gtw_RF69_html_Tx_1_led_button
 
- * led pe D1 definit GPIO5
- * s-a folosit libr modificata
- * RFM69(modificata ESP8266)
+ * LED on D1 defined GPIO5
+ * a modified libr was used
+ * RFM69(modified ESP8266)
  * Modificarea apare in fila CPP
  * //void RFM69::isr0() { _haveData = true; }//original
 
@@ -20,17 +20,17 @@ ICACHE_RAM_ATTR void RFM69::isr0() { _haveData =true; }
 #else
 void RFM69::isr0() { <what ever is specified in the currentversion>}
 #endif
-//modificat acum
-conexiuni RF69 la ESP8266
+//modified now
+RF69 connections to ESP8266
  * RFM69HCW breakout ESP8266 NodeMCU ESP8266 Huzzah
 VIN VU (5V) VBAT (5V)
 GND     GND     GND
 EN      n/c     n/c
-G0      D2 (GPIO04) GPIO04 //cred ca este DIO0
+G0      D2 (GPIO04) GPIO04 //I think it is DIO0
 SCK     D5 (GPIO14/HSCLK) GPIO14
 MISO    D6 (GPIO12/HMISO) GPIO12
 MOSI    D7 (GPIO13/HMOSI) GPIO13
-CS      D8 (GPIO15/HCS) GPIO15 //cred ca este NSS
+CS      D8 (GPIO15/HCS) GPIO15 //I think it is NSS
 RST     D4 (GPIO02) GPIO2
 
  */
@@ -40,18 +40,18 @@ RST     D4 (GPIO02) GPIO2
 //#include <ESP8266WiFi.h>
 #include <RFM69.h>    // apelare librării
 #include <SPI.h>      // apelare librării
-#define NETWORKID       0     // acelaşi pentru ambele noduri
-#define MYNODEID        2   // adresa  ID a primului nod
-#define TONODEID        1     // adresa ID a celui de al doilea nod 
+#define NETWORKID       0     // the same for both nodes
+#define MYNODEID        2   // ID address of the first node
+#define TONODEID        1     // ID address of the second node
 //#define FREQUENCY     RF69_868MHZ   //setare frecvenţă
 #define FREQUENCY     RF69_433MHZ
 
 #define ENCRYPT       true  
 #define ENCRYPTKEY    "TOPSECRETPASSWRD" 
-//stabilire password, 16-byte, acelaşi pentru ambele noduri
-#define USEACK        true    // activare funcţia de confirmare (ACK)
+//set password, 16-byte, the same for both nodes
+#define USEACK        true    // enable the acknowledgment function (ACK)
 
-//de aici adaugat pentru ESP8266
+//added from here for ESP8266
 #define IS_RFM69HCW   true // set to 'true' if you are using an RFM69HCW module
 #define SERIAL_BAUD   115200
 
@@ -68,7 +68,7 @@ RFM69 radio = RFM69(RFM69_CS, RFM69_IRQ, IS_RFM69HCW, RFM69_IRQN);
 
 
  //Servo Servo0;
- int led1 = 5;    //led pe D1=GPIO5 
+ int led1 = 5;    //LED on D1=GPIO5
  typedef struct 
  {    
   int Pot;  
@@ -78,7 +78,7 @@ RFM69 radio = RFM69(RFM69_CS, RFM69_IRQ, IS_RFM69HCW, RFM69_IRQN);
  
 void setup()
 {
-  Serial.begin(SERIAL_BAUD);//adaugat pentru ESP8266
+  Serial.begin(SERIAL_BAUD);//added for ESP8266
 // Hard Reset the RFM module
 pinMode(led1, OUTPUT);
   pinMode(RFM69_RST, OUTPUT);
@@ -112,7 +112,7 @@ Serial.println(" ready");
 Serial.print("Node ");  
 
 if (ENCRYPT)
-radio.encrypt(ENCRYPTKEY);    // activare criptare, modul (AES)
+radio.encrypt(ENCRYPTKEY);    // enable encryption, mode (AES)
 
 }
 

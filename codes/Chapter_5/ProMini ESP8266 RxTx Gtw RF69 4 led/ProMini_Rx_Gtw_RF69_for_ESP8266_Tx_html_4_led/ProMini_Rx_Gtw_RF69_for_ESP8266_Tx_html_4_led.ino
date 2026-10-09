@@ -1,30 +1,30 @@
 /*ProMini
- * necesita libraria RF69(original)
- * se introduce fara a modifica numele
- * incarcare cu FTDI
- * primeste date de la Tx care
- * genereaza pag web cu 4 butoane
+ * requires the RF69 library(original)
+ * entered without modifying the name
+ * upload with FTDI
+ * receives data from the Tx that
+ * generates web page with 4 buttons
  * ESP8266_STA_Tx_Gtw_RF69_client_print_4_led_buton
- * trimite date
+ * sends data
  * theData.Pot
  * 
- alimentare cu 3V, 
+ power supply with 3V,
 
  */
 
 
 #include <RFM69.h>    // apelare librării
 #include <SPI.h>      // apelare librării
-#define NETWORKID       0     // acelaşi pentru ambele noduri
-#define MYNODEID        2   // adresa  ID a primului nod
-#define TONODEID        1     // adresa ID a celui de al doilea nod 
+#define NETWORKID       0     // the same for both nodes
+#define MYNODEID        2   // ID address of the first node
+#define TONODEID        1     // ID address of the second node
 //#define FREQUENCY     RF69_868MHZ   //setare frecvenţă
 #define FREQUENCY     RF69_433MHZ
 
 #define ENCRYPT       true  
 #define ENCRYPTKEY    "TOPSECRETPASSWRD" 
-//stabilire password, 16-byte, acelaşi pentru ambele noduri
-#define USEACK        true    // activare funcţia de confirmare (ACK)
+//set password, 16-byte, the same for both nodes
+#define USEACK        true    // enable the acknowledgment function (ACK)
 
 
 #define IS_RFM69HCW   true // set to 'true' if you are using an RFM69HCW module
@@ -48,7 +48,7 @@ RFM69 radio;
 
 void setup()
 {
-  Serial.begin(SERIAL_BAUD);//adaugat pentru ESP8266
+  Serial.begin(SERIAL_BAUD);//added for ESP8266
 // Hard Reset the RFM module
   pinMode(led1, OUTPUT);
   pinMode(led2, OUTPUT);
@@ -80,9 +80,9 @@ Serial.println(" ready");
 Serial.print("Node ");  
 
 if (ENCRYPT)
-radio.encrypt(ENCRYPTKEY);    // activare criptare, modul (AES)
+radio.encrypt(ENCRYPTKEY);    // enable encryption, mode (AES)
 
-//Servo0.attach(3);//servo pe D3 pro mini
+//Servo0.attach(3);//servo on D3 pro mini
 }
 
 

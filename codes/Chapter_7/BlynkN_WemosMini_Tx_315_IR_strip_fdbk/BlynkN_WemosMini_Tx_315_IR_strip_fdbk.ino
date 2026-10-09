@@ -1,22 +1,22 @@
-/*necesita libr IRremoteESP8266
+/*requires IRremoteESP8266 libr
  
- * RGB pe pinii D5,6,7,8, comandati de V12, 13, 15
+ * RGB on pins D5,6,7,8, controlled by V12, 13, 15
  * 
- feddback cu fotorezistor
+ feedback with photoresistor
  * 
- IR la D2 cu adaptor
- Tx 315 la D1
-//in cod D4 pentru IR 
-//in cod D5 pentru 315
+ IR on D2 with adapter
+ Tx 315 on D1
+//in code D4 for IR
+//in code D5 for 315
 
-afiseaza codurile
+displays the codes
 in Blyk joystick
-virtual V0, V1 modul simplu cu min=-1, max=0, default=0
-feedback cu terminal pe virtial V6
-feedback analog cu gauge pe V3, 
+virtual V0, V1 simple mode with min=-1, max=0, default=0
+feedback with terminal on virtual V6
+analog feedback with gauge on V3,
 
 brik fotorezistor  
-+3.3v la A0
++3.3v to A0
 
 */
 #include <ESP8266WiFi.h>
@@ -44,7 +44,7 @@ void setup() {
 
   pinMode(12, OUTPUT); // Led 1
   pinMode(13, OUTPUT); // Led 2
-  pinMode(14, OUTPUT); // Led 3//D5//masa//necesar pentru pcb 
+  pinMode(14, OUTPUT); // Led 3//D5//ground//required for pcb
   pinMode(15, OUTPUT); // Led 4
   
   Blynk.begin(auth, ssid, pass);
@@ -101,7 +101,7 @@ BLYNK_WRITE(V0)
   { 
    mySwitch.send("100100000110111110000011");  
    //mySwitch.send(806192, 24);
-   //cod tasta off birou , merge si cu binar
+   //office off key code, also works with binary
    Serial.println("OFF birou");//optional
    //Blynk.virtualWrite(12, " OFF office"); 
    Blynk.virtualWrite(6, " OFF office"); 
@@ -109,7 +109,7 @@ BLYNK_WRITE(V0)
   }
 }
 
-////////////////// de aici IR
+////////////////// from here IR
 BLYNK_WRITE(V1) 
 {
     if (param.asInt() == 1){
@@ -121,8 +121,8 @@ BLYNK_WRITE(V1)
     Blynk.virtualWrite(6, " strip ON"); 
   }
 
-  //joystick pe V1, trimite 1=ON,
-  //trimite -1  OFF
+  //joystick on V1, sends 1=ON,
+  //sends -1  OFF
 if (param.asInt() == -1){
     for (int i = 0; i < 4; i++)
   {
@@ -137,7 +137,7 @@ if (param.asInt() == -1){
   
 }
 
-//model coduri pentru alte functii
+//code template for other functions
 /*
 BLYNK_WRITE(V1)
 
@@ -147,7 +147,7 @@ BLYNK_WRITE(V1)
    mySwitch.send("100100000110111110000011");  
    
    //mySwitch.send(806192, 24);
-   //cod tasta off birou , merge si cu binar
+   //office off key code, also works with binary
    Serial.println("OFF birou");//optional
    Blynk.virtualWrite(12, " OFF office"); 
    // displays the message cod sent  
@@ -170,11 +170,11 @@ BLYNK_WRITE(V8)
 
 
 BLYNK_WRITE(V3)
-//buton pe Virtual V3
+//button on Virtual V3
 {
     if (param.asInt() == 1){  
    mySwitch.send(9465732, 24);
-   //merge si cu decimal//
+   //also works with decimal//
    //Serial.println("Birou 1");//optional
    Blynk.virtualWrite(12, " OFFICE 1"); 
    // displays the message cod sent
@@ -182,14 +182,14 @@ BLYNK_WRITE(V3)
 }
 
 BLYNK_WRITE(V13)
-//buton pe Virtual V13, comanda tasta 2 TLC birou
+//button on Virtual V13, controls key 2 of the office TLC
 {
     if (param.asInt() == 1){
    
    //mySwitch.send("100100000110111110001000");   
-   //merge si cu binar
+   //also works with binary
    mySwitch.send(9465736, 24);
-   //merge si cu decimal//
+   //also works with decimal//
    //Serial.println("Birou 2");//optional
    Blynk.virtualWrite(12, " OFFICE 2"); 
    // displays the message cod sent
@@ -197,13 +197,13 @@ BLYNK_WRITE(V13)
 }
 
 BLYNK_WRITE(V11)
-//buton pe Virtual V11, comanda tasta Sleep birou
+//button on Virtual V11, controls the Sleep key of the office TLC
 {
     if (param.asInt() == 1){
    
    //mySwitch.send("100100000110111110000001");   
    mySwitch.send(9465729, 24);
-   //merge si cu decimal//
+   //also works with decimal//
    //Serial.println("Birou Sleep");//optional
    Blynk.virtualWrite(12, " SLEEP"); 
    // displays the message cod sent

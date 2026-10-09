@@ -1,8 +1,8 @@
 /*
- * buton pe vrtual V13 led pe D13
- * feddback pe A)
- * gauge pe V3 pentru feedback min=0 max=1023
- * Oled pe SDA, SCL, GND si +3.3V
+ * button on virtual V13 LED on D13
+ * feedback on A)
+ * gauge on V3 for feedback min=0 max=1023
+ * Oled on SDA, SCL, GND and +3.3V
  */
 #include <Adafruit_SSD1306.h>
 #include <Adafruit_GFX.h>
@@ -38,7 +38,7 @@ display.clearDisplay();
   display.setTextColor(WHITE);
   display.setCursor(0,0);
   
-  display.print("mesaj=");
+  display.print("message=");
   display.print(param.asStr());
   display.display();
 
@@ -64,7 +64,7 @@ void setup() {
   display.setTextColor(WHITE);
   display.setCursor(0,0);
   
-  display.print("Pager si comanda led cu feedback si Blynk");
+  display.print("Pager and LED control with feedback and Blynk");
   
   display.display();
   

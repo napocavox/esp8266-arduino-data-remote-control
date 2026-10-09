@@ -1,8 +1,8 @@
 /*
  * ESP8266 Servo Motor Control With Web Server 
  * https://circuits4you.com
- * servo pe D3 =GPIO 0
- * merge prin router local
+ * servo on D3 =GPIO 0
+ * works through the local router
  * https://circuits4you.com/2019/01/12/esp8266-servo-motor-control/
  */
 
@@ -24,7 +24,7 @@ Adafruit_SSD1306 display(-1);
 //WiFi Connection configuration
 
 const char* ssid = "nume router";
-const char* password = "parola";
+const char* password = "password";
 
 
 
@@ -35,7 +35,7 @@ void handleServo(){
   String POS = server.arg("servoPOS");
   int pos = POS.toInt();
 
-  myservo.write(2*pos);//roteste cu 180 cu pas de 2
+  myservo.write(2*pos);//rotates by 180 in steps of 2
 
   display.clearDisplay(); 
   display.setTextSize(2);

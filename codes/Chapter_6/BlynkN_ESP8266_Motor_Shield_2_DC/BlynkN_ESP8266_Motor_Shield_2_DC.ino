@@ -1,8 +1,8 @@
 /*
- * varianta NodeMcu 2102 si motor shield
- * butoane pe vrtual V12,13,14,15 pentru 
- * PWMA si PWMB
- * DA Si DB pentru sens
+ * NodeMcu 2102 variant and motor shield
+ * buttons on virtual V12,13,14,15 for
+ * PWMA and PWMB
+ * DA and DB for direction
  * 
  */
 
@@ -21,40 +21,40 @@ char pass[] = "password";
 #include <Servo.h>
 
 
-int PWMA=5; //run motor A pe D1
-int PWMB=4; //run motor B pe D2
-int DA=0;   //sens motor A pe D3
-int DB=2;   //sens motor A pe D4
+int PWMA=5; //run motor A on D1
+int PWMB=4; //run motor B on D2
+int DA=0;   //direction motor A on D3
+int DB=2;   //direction motor A on D4
 
 
 BLYNK_WRITE(V12) {    //FW
-  digitalWrite(5, param.asInt()); // PWMA pe D1 
-  digitalWrite(4, param.asInt()); // PWMB pe D2 
-  digitalWrite(0, HIGH); // DA pe D3 sens
-  digitalWrite(2, HIGH); // DB pe D2 sens 
+  digitalWrite(5, param.asInt()); // PWMA on D1
+  digitalWrite(4, param.asInt()); // PWMB on D2
+  digitalWrite(0, HIGH); // DA on D3 direction
+  digitalWrite(2, HIGH); // DB on D2 direction
 }
 
 BLYNK_WRITE(V13) {    //LEFT
-  digitalWrite(5, param.asInt()); // PWMA pe D1 
-  digitalWrite(4, LOW); // PWMB pe D2 
-  digitalWrite(0, HIGH); // DA pe D3 sens
-  digitalWrite(2, HIGH); // DB pe D2 sens 
+  digitalWrite(5, param.asInt()); // PWMA on D1
+  digitalWrite(4, LOW); // PWMB on D2
+  digitalWrite(0, HIGH); // DA on D3 direction
+  digitalWrite(2, HIGH); // DB on D2 direction
   
 }
 
 BLYNK_WRITE(V14) {    //RIGHT 
-  digitalWrite(5, LOW); // PWMA pe D1 
-  digitalWrite(4, param.asInt()); // PWMB pe D2 
-  digitalWrite(0, HIGH); // DA pe D3 sens
-  digitalWrite(2, HIGH); // DB pe D2 sens 
+  digitalWrite(5, LOW); // PWMA on D1
+  digitalWrite(4, param.asInt()); // PWMB on D2
+  digitalWrite(0, HIGH); // DA on D3 direction
+  digitalWrite(2, HIGH); // DB on D2 direction
   
 }
 
 BLYNK_WRITE(V15) {      //BW  
-  digitalWrite(5, param.asInt()); // PWMA pe D1 
-  digitalWrite(4, param.asInt()); // PWMB pe D2 
-  digitalWrite(0, LOW); // DA pe D3 sens
-  digitalWrite(2, LOW); // DB pe D2 sens 
+  digitalWrite(5, param.asInt()); // PWMA on D1
+  digitalWrite(4, param.asInt()); // PWMB on D2
+  digitalWrite(0, LOW); // DA on D3 direction
+  digitalWrite(2, LOW); // DB on D2 direction
   
 }
 
@@ -67,10 +67,10 @@ BLYNK_WRITE(V2) {      //STOP  //optional
 }
 void setup() {
   Serial.begin(115200);
-  pinMode(5, OUTPUT); // PWMA pe D1 
-  pinMode(4, OUTPUT); // PWMB pe D2 
-  pinMode(0, OUTPUT); // DA pe D3 sens
-  pinMode(2, OUTPUT); // DB pe D2 sens 
+  pinMode(5, OUTPUT); // PWMA on D1
+  pinMode(4, OUTPUT); // PWMB on D2
+  pinMode(0, OUTPUT); // DA on D3 direction
+  pinMode(2, OUTPUT); // DB on D2 direction
   
   Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
     }

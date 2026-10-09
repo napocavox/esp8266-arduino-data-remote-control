@@ -1,17 +1,17 @@
-/* modul ESP8266
- *  leduri sau intrările punţii H conectate  
- *  la D5, 6, 7, 8 definiţi în cod prin
+/* ESP8266 module
+ *  LEDs or H-bridge inputs connected
+ *  to D5, 6, 7, 8 defined in code as
 *  GPIO14, GPIO12, GPIO13, GPIO15
-*  comandate de Tx WeMos D1 cu Joystick Shield
-*  butoane A, B, C, D
-* servo comandat de D3-GPIO 0 
+*  controlled by Tx WeMos D1 with Joystick Shield
+*  buttons A, B, C, D
+* servo controlled by D3-GPIO 0
 */
   #include <ESP8266WiFi.h>
   #include <espnow.h>
   #include <Servo.h>
   Servo Servo1; 
   int angle=80;
-  // Structura datelor primite, identică pentru Rx şi Tx  
+  // Structure of the received data, identical for Rx and Tx
   typedef struct test_struct {  
     int x; 
     int y; 
@@ -30,12 +30,12 @@
     Serial.println();
     }
     void setup() {
-    Servo1.attach(0); //servo conectat la D3 definit GPIO 0
-    pinMode(14, OUTPUT);  //led pe D5
-    pinMode(12, OUTPUT);  //led pe D6
-    pinMode(13, OUTPUT);  //led pe D7 
-    pinMode(15, OUTPUT);  //led pe D8 
-    //leduri sau punte H pe D5, 6, 7, 8
+    Servo1.attach(0); //servo connected to D3 defined GPIO 0
+    pinMode(14, OUTPUT);  //LED on D5
+    pinMode(12, OUTPUT);  //LED on D6
+    pinMode(13, OUTPUT);  //LED on D7
+    pinMode(15, OUTPUT);  //LED on D8
+    //LEDs or H-bridge on D5, 6, 7, 8
     digitalWrite(14,LOW); 
     digitalWrite(13,LOW);
     digitalWrite(12,LOW); 
@@ -58,7 +58,7 @@
     Serial.println(" angle="); 
     Serial.print(angle);
   //acţionare servo 
-  //activare leduri sau punte H     
+  //enable LEDs or H-bridge
     if (myData.y == 1) { 
       digitalWrite(14, LOW);   
       } 

@@ -127,10 +127,10 @@ svg.addEventListener('mousedown',function(evt){
   {
     document.getElementById("arc1").setAttribute("d", describeArc(250, 250, 200, offset, angle));
     var servoAng = Math.round(((angle - 220)/280) * 100);
-    //original roteste numai cu 90
+    //original rotates only by 90
     
     //var servoAng = Math.round(((angle - 220)/90) * 100);
-    //roteste cu 180 dar trebuie modif afisajul
+    //rotates by 180 but the display must be modified
     document.getElementById("angle").innerHTML=servoAng;
     sendData(servoAng);
   }

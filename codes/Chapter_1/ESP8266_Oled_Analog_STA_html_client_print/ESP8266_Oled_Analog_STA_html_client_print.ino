@@ -45,7 +45,7 @@ void loop() {
           client.print("<h1 style=font-size:50px>Analog</h1>");
           
           client.print("<p style=font-size:50px>U=</p>");
-          int U = analogRead(A0); //pot pe A0
+          int U = analogRead(A0); //pot on A0
           client.print(U);
   
   display.clearDisplay();

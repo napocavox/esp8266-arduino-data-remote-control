@@ -1,8 +1,8 @@
 /*
  * ESP8266 Servo Motor Control With Web Server 
  * https://circuits4you.com
- * servo pe D3 =GPIO 0
- * merge prin router local
+ * servo on D3 =GPIO 0
+ * works through the local router
  * https://circuits4you.com/2019/01/12/esp8266-servo-motor-control/
  */
 
@@ -21,17 +21,17 @@ ESP8266WebServer server(80);
 //#include <ESP8266WiFi.h>
 #include <RFM69.h>    // apelare librării
 #include <SPI.h>      // apelare librării
-#define NETWORKID       0     // aceeaşi pentru ambele noduri
-#define MYNODEID        1     // adresa  ID a primului nod
-#define TONODEID        2     // adresa ID a celui de al doilea nod 
+#define NETWORKID       0     // the same for both nodes
+#define MYNODEID        1     // ID address of the first node
+#define TONODEID        2     // ID address of the second node
 //#define FREQUENCY     RF69_868MHZ   //setare frecvenţă
 #define FREQUENCY     RF69_433MHZ
 
 #define ENCRYPT       true  
 #define ENCRYPTKEY    "TOPSECRETPASSWRD" 
-//stabilire password, 16-byte, acelaşi pentru ambele noduri
+//set password, 16-byte, the same for both nodes
 #define USEACK        true    
-// activare funcţia de confirmare (ACK)
+// enable the acknowledgment function (ACK)
 
 #define IS_RFM69HCW   true 
 // set to 'true' if you are using an RFM69HCW module
@@ -106,7 +106,7 @@ void setup() {
   delay(2000);
   ////////////////
 
-  Serial.begin(SERIAL_BAUD);//adaugat pentru ESP8266
+  Serial.begin(SERIAL_BAUD);//added for ESP8266
   // Hard Reset the RFM module
   pinMode(RFM69_RST, OUTPUT);
   digitalWrite(RFM69_RST, HIGH);
@@ -138,7 +138,7 @@ void setup() {
   Serial.print("Node ");  
 
   if (ENCRYPT)
-  radio.encrypt(ENCRYPTKEY);    // activare criptare, modul (AES)
+  radio.encrypt(ENCRYPTKEY);    // enable encryption, mode (AES)
 
   char buff[50];
   sprintf(buff, "\nTransmitting at %d Mhz...", FREQUENCY==RF69_433MHZ ? 433 : FREQUENCY==RF69_868MHZ ? 868 : 915);
@@ -153,9 +153,9 @@ void loop() {
     Serial.print("   [RX_RSSI:");
     Serial.print(radio.readRSSI());Serial.print("]");
     Serial.println();
-    //partea de sus este optionala
+    //the part above is optional
     
-    //normalizare valori pentru servomotor.    
+    //normalize values for the servomotor.
     //theData.Pot_0 = map(analogRead(potpin0), 0, 1023, 0, 179);                                              // assign servo position to transmit packet variable.
     //Serial.println(theData.Pot_0);
  

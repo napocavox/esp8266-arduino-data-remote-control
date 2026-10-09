@@ -23,9 +23,9 @@ These are the library versions used and tested by the author. Copy the folders y
 | [`ServoESP32`](ServoESP32) | 1.0.3 | — (supplied by the author, not included directly by the codes) | [link](https://github.com/RoboticsBrno/ServoESP32/) | [LICENSE](ServoESP32/LICENSE) |
 | [`WebSerial`](WebSerial) | 1.3.0 | 3, 4, 7 | [link](https://github.com/ayushsharma82/WebSerial) | [LICENSE](WebSerial/LICENSE) |
 
-## RFM69: two versions, use only one at a time
+## RFM69: modified and original versions
 
-`RFM69_modified_for_ESP8266` differs from `RFM69_original` only in `RFM69.cpp` (the interrupt routine `isr0()` is declared `ICACHE_RAM_ATTR` on ESP8266, see section 4.2.1 of the book). Install the modified version when uploading to an ESP8266 and the original one when uploading to an Arduino Pro Mini / Uno (chapter 5). Both cannot be installed at the same time, because they have the same headers.
+`RFM69_modified_for_ESP8266` differs from `RFM69_original` only in `RFM69.cpp`: the interrupt routine `isr0()` is declared `ICACHE_RAM_ATTR` on ESP8266 (see section 4.2.1 of the book), and the standard routine is kept for the other boards, so the modified version can be used both on ESP8266 and on Arduino Pro Mini / Uno (chapter 5). The original library is included for reference. Do not install both at the same time, because they have the same headers.
 
 ## Required libraries not included here
 
@@ -33,7 +33,7 @@ The following libraries are used by some codes but are not part of this package.
 
 | Library | Source | Note | Codes |
 |---|---|---|---|
-| ESPAsyncTCP | [link](https://github.com/me-no-dev/ESPAsyncTCP) | required by ESPAsyncWebServer and WebSerial on ESP8266 (AsyncTCP is the ESP32 version) | 21 |
-| SimpleTimer | [link](https://github.com/jfturcot/SimpleTimer) | timer used by the Blynk codes | 16 |
+| ESPAsyncTCP | [link](https://github.com/me-no-dev/ESPAsyncTCP) | required by ESPAsyncWebServer and WebSerial on ESP8266 (AsyncTCP is the ESP32 version) | 20 |
+| SimpleTimer | [link](https://github.com/jfturcot/SimpleTimer) | timer used by the Blynk codes | 13 |
 | ArduinoJson | [link](https://github.com/bblanchon/ArduinoJson) |  | 1 |
 | Adafruit Unified Sensor | [link](https://github.com/adafruit/Adafruit_Sensor) | required by Adafruit_MPU6050 and DHT | 1 |

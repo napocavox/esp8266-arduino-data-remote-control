@@ -1,19 +1,19 @@
 /*
-  DHT 11 conectat la gnd, +3.3V, GPIO 2= D4
+  DHT 11 connected to gnd, +3.3V, GPIO 2= D4
   
- Oled conectat: SDA la D2 SCK la D1
+ Oled connected: SDA to D2 SCK to D1
   
-  genereaza Hot Spot AP cu 
+  generates Hot Spot AP with
   IP 192.168.4.1
-  dupa incarcare pe Oled si Serial Monitor 
-  apare adresa IP 192.169.4.1
-  Se deschide pe Android Chrome
-  Se introdice 192.168.4.1/webserial
+  after upload, on Oled and Serial Monitor
+  the IP address 192.169.4.1 appears
+  Open Chrome on Android
+  Enter 192.168.4.1/webserial
   apare pagina web
-  tot ce se editeaza  pe telefon apare pe Oled
- trimite datele de temperatura, umiditata 
+  everything edited  on the phone appears on Oled
+ sends temperature, humidity data
  spre telefon
- Se poate conecta inca un telefon cu acelasi IP
+ Another phone can be connected with the same IP
  
 */
 #include <Arduino.h>
@@ -41,7 +41,7 @@ Adafruit_SSD1306 display(-1);
 #include "DHT.h"
 #define DHTTYPE DHT11   // DHT 11
 
-const int DHTPin = 2;   //DHT la pin D4
+const int DHTPin = 2;   //DHT on pin D4
 DHT dht(DHTPin, DHTTYPE);
 
 int potpin0 = A0; // analog pin used to connect the potentiometer
@@ -59,7 +59,7 @@ void recvMsg(uint8_t *data, size_t len){
   display.setTextColor(WHITE);
   display.setCursor(0,0);
   display.print("Primit=");
-  display.print(d);//afiseaza text tranmmsis pe oled
+  display.print(d);//displays transmitted text on oled
   display.display();
   }
   WebSerial.println(d);

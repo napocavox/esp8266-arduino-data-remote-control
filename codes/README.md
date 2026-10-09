@@ -7,30 +7,29 @@ Every sketch is in its own folder (the Arduino IDE requires the folder to have t
 | Sketch | Book section | Libraries |
 |---|---|---|
 | [`ESP8266_AP_Oled_Servo_Gauge_html`](Chapter_1/ESP8266_AP_Oled_Servo_Gauge_html) + `camera_index.h` | 1.4.3. Transmission of data upon request. Servomotor control | Adafruit_GFX_Library, Adafruit_SSD1306 |
-| [`ESP8266_AP_Oled_Test_conectare_Pass`](Chapter_1/ESP8266_AP_Oled_Test_conectare_Pass) | 1.3. The radio connection | Adafruit_GFX_Library, Adafruit_SSD1306 |
+| [`ESP8266_AP_Oled_Test_connection_Pass`](Chapter_1/ESP8266_AP_Oled_Test_connection_Pass) | 1.3. The radio connection | Adafruit_GFX_Library, Adafruit_SSD1306 |
 | [`ESP8266_Basic_Oled_1_Servo_STA_html`](Chapter_1/ESP8266_Basic_Oled_1_Servo_STA_html) | 1.4.3. Transmission of data upon request. Servomotor control | Adafruit_GFX_Library, Adafruit_SSD1306 |
 | [`ESP8266_Oled_4_Led_Basic_Servo_STA_html_Req_client_print`](Chapter_1/ESP8266_Oled_4_Led_Basic_Servo_STA_html_Req_client_print) | 1.4.3. Transmission of data upon request. Servomotor control | Adafruit_GFX_Library, Adafruit_SSD1306 |
 | [`ESP8266_Oled_AP_4_led_HTML_Request_client_print`](Chapter_1/ESP8266_Oled_AP_4_led_HTML_Request_client_print) | 1.4.2. Transmission of data upon request. LEDs control | Adafruit_GFX_Library, Adafruit_SSD1306 |
 | [`ESP8266_Oled_Analog_STA_html_client_print`](Chapter_1/ESP8266_Oled_Analog_STA_html_client_print) | 1.4.1. Continuous transmission of the data | Adafruit_GFX_Library, Adafruit_SSD1306 |
-| [`ESP8266_Oled_DHT11_Analog_STA_html_continuu`](Chapter_1/ESP8266_Oled_DHT11_Analog_STA_html_continuu) | 1.4.1. Continuous transmission of the data | Adafruit_GFX_Library, Adafruit_SSD1306, DHT_sensor_library |
+| [`ESP8266_Oled_DHT11_Analog_STA_html_continuous`](Chapter_1/ESP8266_Oled_DHT11_Analog_STA_html_continuous) | 1.4.1. Continuous transmission of the data | Adafruit_GFX_Library, Adafruit_SSD1306, DHT_sensor_library |
 | [`ESP8266_Oled_STA_1_led_HTML_Request`](Chapter_1/ESP8266_Oled_STA_1_led_HTML_Request) | 1.4.2. Transmission of data upon request. LEDs control | Adafruit_GFX_Library, Adafruit_SSD1306 |
 | [`ESP8266_Oled_STA_4_led_Analog_HTML_Request_automat`](Chapter_1/ESP8266_Oled_STA_4_led_Analog_HTML_Request_automat) | 1.4.4. Combined transmission, on demand and continuous | Adafruit_GFX_Library, Adafruit_SSD1306 |
 | [`ESP8266_Oled_STA_4_led_Analog_HTML_Request_refresh`](Chapter_1/ESP8266_Oled_STA_4_led_Analog_HTML_Request_refresh) | 1.4.4. Combined transmission, on demand and continuous | Adafruit_GFX_Library, Adafruit_SSD1306 |
 | [`ESP8266_Oled_STA_4_led_HTML_Request_client_print`](Chapter_1/ESP8266_Oled_STA_4_led_HTML_Request_client_print) | 1.4.2. Transmission of data upon request. LEDs control | Adafruit_GFX_Library, Adafruit_SSD1306 |
 | [`ESP8266_Oled_STA_Gauge_1_Servo`](Chapter_1/ESP8266_Oled_STA_Gauge_1_Servo) + `camera_index.h` | 1.4.3. Transmission of data upon request. Servomotor control | Adafruit_GFX_Library, Adafruit_SSD1306 |
-| [`ESP8266_Oled_conectare_fara_HTML_Open`](Chapter_1/ESP8266_Oled_conectare_fara_HTML_Open) | 1.3. The radio connection | Adafruit_GFX_Library, Adafruit_SSD1306 |
+| [`ESP8266_Oled_connection_without_HTML_Open`](Chapter_1/ESP8266_Oled_connection_without_HTML_Open) | 1.3. The radio connection | Adafruit_GFX_Library, Adafruit_SSD1306 |
 
 ## Chapter 2. Asynchronous and WebSocket servers
 
 | Sketch | Book section | Libraries |
 |---|---|---|
 | [`ESP8266_Oled_STA_Async_MPU6050`](Chapter_2/ESP8266_Oled_STA_Async_MPU6050) | 2.5. Server with MPU 6050 accelerometer | Adafruit_GFX_Library, Adafruit_SSD1306, ESPAsyncWebServer, Adafruit Unified Sensor (not included), ESPAsyncTCP (not included) |
-| [`ESP8266_Oled_STA_Asynk_4_led_switch`](Chapter_2/ESP8266_Oled_STA_Asynk_4_led_switch) | — | Adafruit_GFX_Library, Adafruit_SSD1306, ESPAsyncWebServer, ESPAsyncTCP (not included) |
 | [`ESP8266_STA_Ws_1_Servo_1_Slider`](Chapter_2/ESP8266_STA_Ws_1_Servo_1_Slider) | 2.1. Servomotor control | arduinoWebSockets |
 | [`ESP8266_STA_Ws_4_led_Switch`](Chapter_2/ESP8266_STA_Ws_4_led_Switch) | 2.3. ON/OFF control of more LEDs | ESPAsyncWebServer, ESPAsyncTCP (not included) |
 | [`ESP8266_STA_Ws_Oled_4_led_Switch`](Chapter_2/ESP8266_STA_Ws_Oled_4_led_Switch) | 2.3. ON/OFF control of more LEDs | Adafruit_GFX_Library, Adafruit_SSD1306, ESPAsyncWebServer, ESPAsyncTCP (not included) |
 | [`ESP8266_STA_Ws_PWM_3_LED_control`](Chapter_2/ESP8266_STA_Ws_PWM_3_LED_control) | 2.2. PWM control of one RGB led | arduinoWebSockets |
-| [`ESP8266_WS_STA_Un_Servo_Oled_Slider`](Chapter_2/ESP8266_WS_STA_Un_Servo_Oled_Slider) | 2.1. Servomotor control | Adafruit_GFX_Library, Adafruit_SSD1306, ESPAsyncWebServer, ESPAsyncTCP (not included) |
+| [`ESP8266_WS_STA_One_Servo_Oled_Slider`](Chapter_2/ESP8266_WS_STA_One_Servo_Oled_Slider) | 2.1. Servomotor control | Adafruit_GFX_Library, Adafruit_SSD1306, ESPAsyncWebServer, ESPAsyncTCP (not included) |
 | [`ESP8266_Ws_STA_3_led_State`](Chapter_2/ESP8266_Ws_STA_3_led_State) | 2.4. LEDs control with confirmation | ESPAsyncWebServer, ESPAsyncTCP (not included) |
 | [`Scan_I2C`](Chapter_2/Scan_I2C) | 2.5. Server with MPU 6050 accelerometer | — (ESP8266 core only) |
 
@@ -43,10 +42,10 @@ Every sketch is in its own folder (the Arduino IDE requires the folder to have t
 | [`ESP8266_AP_Oled_Rx_Text_Webserial`](Chapter_3/ESP8266_AP_Oled_Rx_Text_Webserial) | 3.1. Unidirectional text transmission with WebSerial and Android | Adafruit_GFX_Library, Adafruit_SSD1306, AsyncTCP, ESPAsyncWebServer, WebSerial, ESPAsyncTCP (not included) |
 | [`ESP8266_AP_Oled_Text_RGB_Servo_Send_A0_Webserial`](Chapter_3/ESP8266_AP_Oled_Text_RGB_Servo_Send_A0_Webserial) | 3.4. Bidirectional connections and feedback with WebSerial | Adafruit_GFX_Library, Adafruit_SSD1306, AsyncTCP, ESPAsyncWebServer, WebSerial, ESPAsyncTCP (not included) |
 | [`ESP8266_AP_Oled_Text_RGB_Servo_fdbk_Send_A0_Webserial`](Chapter_3/ESP8266_AP_Oled_Text_RGB_Servo_fdbk_Send_A0_Webserial) | 3.4. Bidirectional connections and feedback with WebSerial | Adafruit_GFX_Library, Adafruit_SSD1306, AsyncTCP, ESPAsyncWebServer, WebSerial, ESPAsyncTCP (not included) |
-| [`ESP8266_AP_WebS_Oled_PS2_Mouse_x_Dist_fara_libr`](Chapter_3/ESP8266_AP_WebS_Oled_PS2_Mouse_x_Dist_fara_libr) | 3.5. Tracking movements with a PS2 mouse | Adafruit_GFX_Library, Adafruit_SSD1306, AsyncTCP, ESPAsyncWebServer, WebSerial, ESPAsyncTCP (not included) |
-| [`ESP8266_AP_WebS_PS2_Mouse_x_Dist_fara_libr`](Chapter_3/ESP8266_AP_WebS_PS2_Mouse_x_Dist_fara_libr) | 3.5. Tracking movements with a PS2 mouse | AsyncTCP, ESPAsyncWebServer, WebSerial, ESPAsyncTCP (not included) |
-| [`ESP8266_AP_WebSer_Mouse_Bila_PS2_libr_ps2`](Chapter_3/ESP8266_AP_WebSer_Mouse_Bila_PS2_libr_ps2) | 3.5. Tracking movements with a PS2 mouse | AsyncTCP, ESPAsyncWebServer, WebSerial, arduino_ps2_mouse, ESPAsyncTCP (not included) |
-| [`ESP8266_AP_WebSer_Oled_Mouse_Bila_PS2_libr_ps2`](Chapter_3/ESP8266_AP_WebSer_Oled_Mouse_Bila_PS2_libr_ps2) | 3.5. Tracking movements with a PS2 mouse | Adafruit_GFX_Library, Adafruit_SSD1306, AsyncTCP, ESPAsyncWebServer, WebSerial, arduino_ps2_mouse, ESPAsyncTCP (not included) |
+| [`ESP8266_AP_WebS_Oled_PS2_Mouse_x_Dist_no_lib`](Chapter_3/ESP8266_AP_WebS_Oled_PS2_Mouse_x_Dist_no_lib) | 3.5. Tracking movements with a PS2 mouse | Adafruit_GFX_Library, Adafruit_SSD1306, AsyncTCP, ESPAsyncWebServer, WebSerial, ESPAsyncTCP (not included) |
+| [`ESP8266_AP_WebS_PS2_Mouse_x_Dist_no_lib`](Chapter_3/ESP8266_AP_WebS_PS2_Mouse_x_Dist_no_lib) | 3.5. Tracking movements with a PS2 mouse | AsyncTCP, ESPAsyncWebServer, WebSerial, ESPAsyncTCP (not included) |
+| [`ESP8266_AP_WebSer_Mouse_Ball_PS2_lib_ps2`](Chapter_3/ESP8266_AP_WebSer_Mouse_Ball_PS2_lib_ps2) | 3.5. Tracking movements with a PS2 mouse | AsyncTCP, ESPAsyncWebServer, WebSerial, arduino_ps2_mouse, ESPAsyncTCP (not included) |
+| [`ESP8266_AP_WebSer_Oled_Mouse_Ball_PS2_lib_ps2`](Chapter_3/ESP8266_AP_WebSer_Oled_Mouse_Ball_PS2_lib_ps2) | 3.5. Tracking movements with a PS2 mouse | Adafruit_GFX_Library, Adafruit_SSD1306, AsyncTCP, ESPAsyncWebServer, WebSerial, arduino_ps2_mouse, ESPAsyncTCP (not included) |
 
 ## Chapter 4. Peer to Peer (P2P) connections
 
@@ -59,27 +58,24 @@ Every sketch is in its own folder (the Arduino IDE requires the folder to have t
 | [`ESP8266 Gateway RF69 DHT11 / ESP8266_AP_Gtw_Rx_RF69_Analog_T_H_DHT_11_Tx_html`](Chapter_4/ESP8266%20Gateway%20RF69%20DHT11/ESP8266_AP_Gtw_Rx_RF69_Analog_T_H_DHT_11_Tx_html) | 4.5. Gateway connections in Access Point mode. Sensor data | RFM69_modified_for_ESP8266 / RFM69_original |
 | [`ESP8266 Gateway RF69 DHT11 / ESP8266_Gtw_RF69_Tx_DHT11_Analog_T_H`](Chapter_4/ESP8266%20Gateway%20RF69%20DHT11/ESP8266_Gtw_RF69_Tx_DHT11_Analog_T_H) | 4.4. Gateway for sensor data through Station Mode server<br>4.5. Gateway connections in Access Point mode. Sensor data | DHT_sensor_library, RFM69_modified_for_ESP8266 / RFM69_original |
 | [`ESP8266 Gateway RF69 DHT11 / ESP8266_Gtw_RF69_Tx_DHT11_T_H`](Chapter_4/ESP8266%20Gateway%20RF69%20DHT11/ESP8266_Gtw_RF69_Tx_DHT11_T_H) | 4.4. Gateway for sensor data through Station Mode server | DHT_sensor_library, RFM69_modified_for_ESP8266 / RFM69_original |
-| [`ESP8266 Gateway RF69 DHT11 / ESP8266_STA_Gtw_Rx_RF69_Analog_T_H_DHT_11_Tx_html`](Chapter_4/ESP8266%20Gateway%20RF69%20DHT11/ESP8266_STA_Gtw_Rx_RF69_Analog_T_H_DHT_11_Tx_html) | — | RFM69_modified_for_ESP8266 / RFM69_original |
-| [`ESP8266 Gateway RF69 DHT11 / ESP8266_STA_Gtw_Rx_RF69_Analog_T_H_DHT_11_Tx_html_Mare`](Chapter_4/ESP8266%20Gateway%20RF69%20DHT11/ESP8266_STA_Gtw_Rx_RF69_Analog_T_H_DHT_11_Tx_html_Mare) | — | RFM69_modified_for_ESP8266 / RFM69_original |
-| [`ESP8266 Gateway RF69 DHT11 / ESP8266_STA_Gtw_Rx_RF69_T_H_DHT_11_Tx_html`](Chapter_4/ESP8266%20Gateway%20RF69%20DHT11/ESP8266_STA_Gtw_Rx_RF69_T_H_DHT_11_Tx_html) | — | RFM69_modified_for_ESP8266 / RFM69_original |
-| [`ESP8266 Gateway RF69 Rx Tx Text / ESP8266_cu_RF69_din_UNO_Bilat_Rx1_Tx_2_text_tastatura`](Chapter_4/ESP8266%20Gateway%20RF69%20Rx%20Tx%20Text/ESP8266_cu_RF69_din_UNO_Bilat_Rx1_Tx_2_text_tastatura) | 4.2.2. Bilateral text transmissions with confirmation | RFM69_modified_for_ESP8266 / RFM69_original |
-| [`ESP8266 Gateway RF69 Rx Tx Text / ESP8266_cu_RF69_din_UNO_Bilat_Rx2_Tx1_text_tastatura`](Chapter_4/ESP8266%20Gateway%20RF69%20Rx%20Tx%20Text/ESP8266_cu_RF69_din_UNO_Bilat_Rx2_Tx1_text_tastatura) | 4.2.2. Bilateral text transmissions with confirmation | RFM69_modified_for_ESP8266 / RFM69_original |
+| [`ESP8266 Gateway RF69 Rx Tx Text / ESP8266_with_RF69_from_UNO_Bilat_Rx1_Tx_2_text_keyboard`](Chapter_4/ESP8266%20Gateway%20RF69%20Rx%20Tx%20Text/ESP8266_with_RF69_from_UNO_Bilat_Rx1_Tx_2_text_keyboard) | 4.2.2. Bilateral text transmissions with confirmation | RFM69_modified_for_ESP8266 / RFM69_original |
+| [`ESP8266 Gateway RF69 Rx Tx Text / ESP8266_with_RF69_from_UNO_Bilat_Rx2_Tx1_text_keyboard`](Chapter_4/ESP8266%20Gateway%20RF69%20Rx%20Tx%20Text/ESP8266_with_RF69_from_UNO_Bilat_Rx2_Tx1_text_keyboard) | 4.2.2. Bilateral text transmissions with confirmation | RFM69_modified_for_ESP8266 / RFM69_original |
 | [`ESP8266 Gateway RF69 / ESP8266_Gateway_Rx_RF69_1_Servo`](Chapter_4/ESP8266%20Gateway%20RF69/ESP8266_Gateway_Rx_RF69_1_Servo) | 4.3.2. Servomotor control | RFM69_modified_for_ESP8266 / RFM69_original |
 | [`ESP8266 Gateway RF69 / ESP8266_STA_Gateway_Tx_Gauge_1_Servo`](Chapter_4/ESP8266%20Gateway%20RF69/ESP8266_STA_Gateway_Tx_Gauge_1_Servo) + `camera_index.h` | 4.3.2. Servomotor control | RFM69_modified_for_ESP8266 / RFM69_original |
 | [`ESP8266 Gateway RF69 / ESP8266_STA_Gateway_html_Tx_RF69_Slider_for_Servo`](Chapter_4/ESP8266%20Gateway%20RF69/ESP8266_STA_Gateway_html_Tx_RF69_Slider_for_Servo) | 4.3.2. Servomotor control | RFM69_modified_for_ESP8266 / RFM69_original |
-| [`ESP8266 Gateway RF69 / ESP8266_STA_Gwy_Tx_RF69_4_Buton_1_Slider_for_Servo`](Chapter_4/ESP8266%20Gateway%20RF69/ESP8266_STA_Gwy_Tx_RF69_4_Buton_1_Slider_for_Servo) | 4.3.2. Servomotor control | RFM69_modified_for_ESP8266 / RFM69_original |
+| [`ESP8266 Gateway RF69 / ESP8266_STA_Gtw_Tx_RF69_4_Button_1_Slider_for_Servo`](Chapter_4/ESP8266%20Gateway%20RF69/ESP8266_STA_Gtw_Tx_RF69_4_Button_1_Slider_for_Servo) | 4.3.2. Servomotor control | RFM69_modified_for_ESP8266 / RFM69_original |
 | [`ESP8266 RF69 Gtw html 1 led / ESP8266_Rx_Gtw_RF69_for_Tx_html_1_led_button`](Chapter_4/ESP8266%20RF69%20Gtw%20html%201%20led/ESP8266_Rx_Gtw_RF69_for_Tx_html_1_led_button) | 4.3.1. The LEDs control | RFM69_modified_for_ESP8266 / RFM69_original |
 | [`ESP8266 RF69 Gtw html 1 led / ESP8266_STA_Gtw_RF69_html_Tx_1_led_button`](Chapter_4/ESP8266%20RF69%20Gtw%20html%201%20led/ESP8266_STA_Gtw_RF69_html_Tx_1_led_button) | 4.3.1. The LEDs control | RFM69_modified_for_ESP8266 / RFM69_original |
 | [`ESP8266 Rx Tx Servo RF69 / ESP8266_Rx_RF69_1_Servo`](Chapter_4/ESP8266%20Rx%20Tx%20Servo%20RF69/ESP8266_Rx_RF69_1_Servo) | 4.2.3. Data transmissions. Control of one servomotor<br>4.3.1. The LEDs control | RFM69_modified_for_ESP8266 / RFM69_original |
 | [`ESP8266 Rx Tx Servo RF69 / ESP8266_Tx_ERF69_Analog_1_Servo`](Chapter_4/ESP8266%20Rx%20Tx%20Servo%20RF69/ESP8266_Tx_ERF69_Analog_1_Servo) | 4.2.3. Data transmissions. Control of one servomotor | RFM69_modified_for_ESP8266 / RFM69_original |
-| [`ESP8266 RxTx Gateway RF69 WebSerial / ESP8266_AP_WebSerial_Tx_Gtw_cu_RF69_for_Servo`](Chapter_4/ESP8266%20RxTx%20Gateway%20RF69%20WebSerial/ESP8266_AP_WebSerial_Tx_Gtw_cu_RF69_for_Servo) | 4.7. Gateway with WebSerial. Servomotor control by text messages | AsyncTCP, ESPAsyncWebServer, RFM69_modified_for_ESP8266 / RFM69_original, WebSerial, ESPAsyncTCP (not included) |
+| [`ESP8266 RxTx Gateway RF69 WebSerial / ESP8266_AP_WebSerial_Tx_Gtw_with_RF69_for_Servo`](Chapter_4/ESP8266%20RxTx%20Gateway%20RF69%20WebSerial/ESP8266_AP_WebSerial_Tx_Gtw_with_RF69_for_Servo) | 4.7. Gateway with WebSerial. Servomotor control by text messages | AsyncTCP, ESPAsyncWebServer, RFM69_modified_for_ESP8266 / RFM69_original, WebSerial, ESPAsyncTCP (not included) |
 | [`ESP8266 RxTx Gateway RF69 WebSerial / ESP8266_Gateway_Rx_RF69_1_Servo_for_WebSerial`](Chapter_4/ESP8266%20RxTx%20Gateway%20RF69%20WebSerial/ESP8266_Gateway_Rx_RF69_1_Servo_for_WebSerial) | 4.7. Gateway with WebSerial. Servomotor control by text messages | RFM69_modified_for_ESP8266 / RFM69_original |
 | [`ESP8266 RxTx Gtw RF69 Async 1 led / ESP8266_Rx_Gtw_RF69_for_Tx_Async_1_led`](Chapter_4/ESP8266%20RxTx%20Gtw%20RF69%20Async%201%20led/ESP8266_Rx_Gtw_RF69_for_Tx_Async_1_led) | 4.6. Gateway with asynchronous server. The LED control | RFM69_modified_for_ESP8266 / RFM69_original |
 | [`ESP8266 RxTx Gtw RF69 Async 1 led / ESP8266_Tx_STA_Async_Gtw_RF69_1_led`](Chapter_4/ESP8266%20RxTx%20Gtw%20RF69%20Async%201%20led/ESP8266_Tx_STA_Async_Gtw_RF69_1_led) | 4.6. Gateway with asynchronous server. The LED control | ESPAsyncWebServer, RFM69_modified_for_ESP8266 / RFM69_original, ESPAsyncTCP (not included) |
-| [`ESP8266_Client_Server_P2P_4_buton_for_4_led`](Chapter_4/ESP8266_Client_Server_P2P_4_buton_for_4_led) | 4.1. P2P via Wi-Fi | Adafruit_GFX_Library, Adafruit_SSD1306 |
+| [`ESP8266_Client_Server_P2P_4_button_for_4_led`](Chapter_4/ESP8266_Client_Server_P2P_4_button_for_4_led) | 4.1. P2P via Wi-Fi | Adafruit_GFX_Library, Adafruit_SSD1306 |
 | [`ESP8266_Oled_STA_Tx_315_4_Ch_html`](Chapter_4/ESP8266_Oled_STA_Tx_315_4_Ch_html) | 4.9. Gateway with RxTx 315/433 MHz modules | Adafruit_GFX_Library, Adafruit_SSD1306, rc_switch |
-| [`ESP8266_Server_Oled_P2P_4_led_for_4_buton`](Chapter_4/ESP8266_Server_Oled_P2P_4_led_for_4_buton) | 4.1. P2P via Wi-Fi | Adafruit_GFX_Library, Adafruit_SSD1306, ArduinoJson (not included) |
-| [`UNO_Rx_decodor_315-433_simplu`](Chapter_4/UNO_Rx_decodor_315-433_simplu) | 4.9. Gateway with RxTx 315/433 MHz modules | rc_switch |
+| [`ESP8266_Server_Oled_P2P_4_led_for_4_button`](Chapter_4/ESP8266_Server_Oled_P2P_4_led_for_4_button) | 4.1. P2P via Wi-Fi | Adafruit_GFX_Library, Adafruit_SSD1306, ArduinoJson (not included) |
+| [`UNO_Rx_decoder_315-433_simple`](Chapter_4/UNO_Rx_decoder_315-433_simple) | 4.9. Gateway with RxTx 315/433 MHz modules | rc_switch |
 
 ## Chapter 5. Gateway with ESP8266 and Arduino Uno Pro Mini
 
@@ -87,12 +83,12 @@ Every sketch is in its own folder (the Arduino IDE requires the folder to have t
 |---|---|---|
 | [`ESP8266_STA_Gateway_Tx_Gauge_1_Servo_for_ProMini`](Chapter_5/ESP8266_STA_Gateway_Tx_Gauge_1_Servo_for_ProMini) + `camera_index.h` | 5.2. Servomotor control through gateway with Arduino Pro Mini | RFM69_modified_for_ESP8266 / RFM69_original |
 | [`ESP8266_STA_Tx_Gtw_Rf69_Slider_1_Servo_for_ProMini`](Chapter_5/ESP8266_STA_Tx_Gtw_Rf69_Slider_1_Servo_for_ProMini) | 5.2. Servomotor control through gateway with Arduino Pro Mini | RFM69_modified_for_ESP8266 / RFM69_original |
-| [`ProMini ESP8266 RxTx Gtw RF69 4 led / ESP8266_AP_Tx_Gtw_RF69_client_print_4_led_buton`](Chapter_5/ProMini%20ESP8266%20RxTx%20Gtw%20RF69%204%20led/ESP8266_AP_Tx_Gtw_RF69_client_print_4_led_buton) | 5.4. Gateway with Arduino Pro Mini for LEDs control | RFM69_modified_for_ESP8266 / RFM69_original |
-| [`ProMini ESP8266 RxTx Gtw RF69 4 led / ESP8266_STA_Tx_Gtw_RF69_client_print_4_led_buton`](Chapter_5/ProMini%20ESP8266%20RxTx%20Gtw%20RF69%204%20led/ESP8266_STA_Tx_Gtw_RF69_client_print_4_led_buton) | 5.4. Gateway with Arduino Pro Mini for LEDs control | RFM69_modified_for_ESP8266 / RFM69_original |
+| [`ProMini ESP8266 RxTx Gtw RF69 4 led / ESP8266_AP_Tx_Gtw_RF69_client_print_4_led_button`](Chapter_5/ProMini%20ESP8266%20RxTx%20Gtw%20RF69%204%20led/ESP8266_AP_Tx_Gtw_RF69_client_print_4_led_button) | 5.4. Gateway with Arduino Pro Mini for LEDs control | RFM69_modified_for_ESP8266 / RFM69_original |
+| [`ProMini ESP8266 RxTx Gtw RF69 4 led / ESP8266_STA_Tx_Gtw_RF69_client_print_4_led_button`](Chapter_5/ProMini%20ESP8266%20RxTx%20Gtw%20RF69%204%20led/ESP8266_STA_Tx_Gtw_RF69_client_print_4_led_button) | 5.4. Gateway with Arduino Pro Mini for LEDs control | RFM69_modified_for_ESP8266 / RFM69_original |
 | [`ProMini ESP8266 RxTx Gtw RF69 4 led / ProMini_Rx_Gtw_RF69_for_ESP8266_Tx_html_4_led`](Chapter_5/ProMini%20ESP8266%20RxTx%20Gtw%20RF69%204%20led/ProMini_Rx_Gtw_RF69_for_ESP8266_Tx_html_4_led) | 5.4. Gateway with Arduino Pro Mini for LEDs control | RFM69_modified_for_ESP8266 / RFM69_original |
 | [`ProMini ESP8266 gtw Analog / ESP8266_STA_Gtw_Rx_RF69__for_Tx_Ax_html`](Chapter_5/ProMini%20ESP8266%20gtw%20Analog/ESP8266_STA_Gtw_Rx_RF69__for_Tx_Ax_html) | 5.3. Gateway with Arduino Pro Mini for analog data | RFM69_modified_for_ESP8266 / RFM69_original |
 | [`ProMini ESP8266 gtw Analog / ProMini_Tx_RF69_Gtw_Ax_for_ESP8266`](Chapter_5/ProMini%20ESP8266%20gtw%20Analog/ProMini_Tx_RF69_Gtw_Ax_for_ESP8266) | 5.3. Gateway with Arduino Pro Mini for analog data | RFM69_modified_for_ESP8266 / RFM69_original |
-| [`ProMini_Rx_Gtw_RF69_RGB_1_Serrvo_for_ESP8266_Tx`](Chapter_5/ProMini_Rx_Gtw_RF69_RGB_1_Serrvo_for_ESP8266_Tx) | 5.2. Servomotor control through gateway with Arduino Pro Mini | RFM69_modified_for_ESP8266 / RFM69_original |
+| [`ProMini_Rx_Gtw_RF69_RGB_1_Servo_for_ESP8266_Tx`](Chapter_5/ProMini_Rx_Gtw_RF69_RGB_1_Servo_for_ESP8266_Tx) | 5.2. Servomotor control through gateway with Arduino Pro Mini | RFM69_modified_for_ESP8266 / RFM69_original |
 
 ## Chapter 6. Transmission of data and orders trough the internet
 
@@ -106,33 +102,30 @@ Every sketch is in its own folder (the Arduino IDE requires the folder to have t
 | [`BlynkN_ESP8266_Oled_Pager_Unilat_text`](Chapter_6/BlynkN_ESP8266_Oled_Pager_Unilat_text) | 6.5. Sending texts with Blynk. Unilateral pager | Adafruit_GFX_Library, Adafruit_SSD1306, Blynk |
 | [`BlynkN_ESP8266_TFT_18_ST7735_Pager_A0_V_Gauge`](Chapter_6/BlynkN_ESP8266_TFT_18_ST7735_Pager_A0_V_Gauge) | 6.6.2. Analog voltmeter and text pager | Adafruit_GFX_Library, Adafruit_ST7735_and_ST7789_Library, Blynk, SimpleTimer (not included) |
 | [`BlynkN_ESP8266_TFT_18_ST7735_pager`](Chapter_6/BlynkN_ESP8266_TFT_18_ST7735_pager) | 6.6.1. Pager with TFT and Blynk | Adafruit_GFX_Library, Adafruit_ST7735_and_ST7789_Library, Blynk |
-| [`BlynkN_ESP8266_Tx_IR_DHT11_Fotorez_fdbk`](Chapter_6/BlynkN_ESP8266_Tx_IR_DHT11_Fotorez_fdbk) | 6.4.2. IR control of LEDs lighting strip | Blynk, DHT_sensor_library, IRremoteESP8266, rc_switch, SimpleTimer (not included) |
+| [`BlynkN_ESP8266_Tx_IR_DHT11_Photores_fdbk`](Chapter_6/BlynkN_ESP8266_Tx_IR_DHT11_Photores_fdbk) | 6.4.2. IR control of LEDs lighting strip | Blynk, DHT_sensor_library, IRremoteESP8266, rc_switch, SimpleTimer (not included) |
 | [`BlynkN_ESP8266_Tx_IR_strip_fdbk`](Chapter_6/BlynkN_ESP8266_Tx_IR_strip_fdbk) | 6.4.2. IR control of LEDs lighting strip | Blynk, IRremoteESP8266, rc_switch, SimpleTimer (not included) |
 | [`Blynk_ESP8266_4_led`](Chapter_6/Blynk_ESP8266_4_led) | 6.1. Simple commands with Blynk | Blynk |
-| [`Decodor_IR_ESP8266_IRrecvDumpV2_din_exemple`](Chapter_6/Decodor_IR_ESP8266_IRrecvDumpV2_din_exemple) | 6.4.2. IR control of LEDs lighting strip | IRremoteESP8266 |
-| [`UNO_Rx_decodor_315-433_simplu`](Chapter_6/UNO_Rx_decodor_315-433_simplu) | 6.4.1. Radio control of a lighting system | rc_switch |
+| [`Decoder_IR_ESP8266_IRrecvDumpV2_from_examples`](Chapter_6/Decoder_IR_ESP8266_IRrecvDumpV2_from_examples) | 6.4.2. IR control of LEDs lighting strip | IRremoteESP8266 |
+| [`UNO_Rx_decoder_315-433_simple`](Chapter_6/UNO_Rx_decoder_315-433_simple) | 6.4.1. Radio control of a lighting system | rc_switch |
 
 ## Chapter 7. Equivalent ESP8266 modules
 
 | Sketch | Book section | Libraries |
 |---|---|---|
-| [`BlynkN_ESP_12_E_1_Servo_HB_Oled_Pager_RGB_foto_fdbk`](Chapter_7/BlynkN_ESP_12_E_1_Servo_HB_Oled_Pager_RGB_foto_fdbk) | 7.4.3. Control of DC motors and servomotors | Adafruit_GFX_Library, Adafruit_SSD1306, Blynk, SimpleTimer (not included) |
-| [`BlynkN_ESP_12_E_2_Servo_HB_Oled_Pager_RGB_foto_fdbk`](Chapter_7/BlynkN_ESP_12_E_2_Servo_HB_Oled_Pager_RGB_foto_fdbk) | 7.4.3. Control of DC motors and servomotors | Adafruit_GFX_Library, Adafruit_SSD1306, Blynk, SimpleTimer (not included) |
-| [`BlynkN_ESP_12_E_HB_Oled_Pager_RGB__foto_fdbk`](Chapter_7/BlynkN_ESP_12_E_HB_Oled_Pager_RGB__foto_fdbk) | — | Adafruit_GFX_Library, Adafruit_SSD1306, Blynk, SimpleTimer (not included) |
+| [`BlynkN_ESP01_2_led`](Chapter_7/BlynkN_ESP01_2_led) | 7.1. ESP8266-01 module | Adafruit_GFX_Library, Adafruit_SSD1306, Blynk |
+| [`BlynkN_ESP_12_E_1_Servo_HB_Oled_Pager_RGB_photo_fdbk`](Chapter_7/BlynkN_ESP_12_E_1_Servo_HB_Oled_Pager_RGB_photo_fdbk) | 7.4.3. Control of DC motors and servomotors | Adafruit_GFX_Library, Adafruit_SSD1306, Blynk, SimpleTimer (not included) |
+| [`BlynkN_ESP_12_E_2_Servo_HB_Oled_Pager_RGB_photo_fdbk`](Chapter_7/BlynkN_ESP_12_E_2_Servo_HB_Oled_Pager_RGB_photo_fdbk) | 7.4.3. Control of DC motors and servomotors | Adafruit_GFX_Library, Adafruit_SSD1306, Blynk, SimpleTimer (not included) |
 | [`BlynkN_ESP_12_E_Oled_Pager_RGB_Ao_fdbk`](Chapter_7/BlynkN_ESP_12_E_Oled_Pager_RGB_Ao_fdbk) | 7.4.2. Text pager with Oled display | Adafruit_GFX_Library, Adafruit_SSD1306, Blynk, SimpleTimer (not included) |
-| [`BlynkN_ESP_12_E_RGB_Ao_fdbk`](Chapter_7/BlynkN_ESP_12_E_RGB_Ao_fdbk) | — | Blynk, SimpleTimer (not included) |
 | [`BlynkN_WemosMini_Tx_315_IR_strip_fdbk`](Chapter_7/BlynkN_WemosMini_Tx_315_IR_strip_fdbk) | 7.3. ESP8266-WeMos D1 Mini module | Blynk, IRremoteESP8266, rc_switch, SimpleTimer (not included) |
-| [`BynkN_ESP01_2_led`](Chapter_7/BynkN_ESP01_2_led) | 7.1. ESP8266-01 module | Adafruit_GFX_Library, Adafruit_SSD1306, Blynk |
 | [`ESP8266_Get_MAC_Address`](Chapter_7/ESP8266_Get_MAC_Address) | 7.2.5. WeMos D1 R2 P2P connections with Joystick Shield and ESP8266 | — (ESP8266 core only) |
-| [`ESP_12_E_Oled_STA_Asynk_4_led_switch`](Chapter_7/ESP_12_E_Oled_STA_Asynk_4_led_switch) | 7.4.4. Local server and web page with ESP12-E | Adafruit_GFX_Library, Adafruit_SSD1306, ESPAsyncWebServer, ESPAsyncTCP (not included) |
-| [`WeMos D1 Bilat Rx Tx / Rx_Node_Bilat_1_servo_4led_fdbk_simplu_2`](Chapter_7/WeMos%20D1%20Bilat%20Rx%20Tx/Rx_Node_Bilat_1_servo_4led_fdbk_simplu_2) | 7.2.6. P2P connection and feedback with Joystick Shield | — (ESP8266 core only) |
-| [`WeMos D1 Bilat Rx Tx / Tx_Bilat_1_Servo_4_led_Oled_fdbk_simplu`](Chapter_7/WeMos%20D1%20Bilat%20Rx%20Tx/Tx_Bilat_1_Servo_4_led_Oled_fdbk_simplu) | 7.2.6. P2P connection and feedback with Joystick Shield | Adafruit_SSD1306 |
+| [`ESP_12_E_Oled_STA_Async_4_led_switch`](Chapter_7/ESP_12_E_Oled_STA_Async_4_led_switch) | 7.4.4. Local server and web page with ESP12-E | Adafruit_GFX_Library, Adafruit_SSD1306, ESPAsyncWebServer, ESPAsyncTCP (not included) |
+| [`WeMos D1 Bilat Rx Tx / Rx_Node_Bilat_1_servo_4led_fdbk_simple_2`](Chapter_7/WeMos%20D1%20Bilat%20Rx%20Tx/Rx_Node_Bilat_1_servo_4led_fdbk_simple_2) | 7.2.6. P2P connection and feedback with Joystick Shield | — (ESP8266 core only) |
+| [`WeMos D1 Bilat Rx Tx / Tx_Bilat_1_Servo_4_led_Oled_fdbk_simple`](Chapter_7/WeMos%20D1%20Bilat%20Rx%20Tx/Tx_Bilat_1_Servo_4_led_Oled_fdbk_simple) | 7.2.6. P2P connection and feedback with Joystick Shield | Adafruit_SSD1306 |
 | [`WeMos D1 Unilat Rx Tx / WeMos_D1_Unilat_Rx_1_Servo_H_Bridge`](Chapter_7/WeMos%20D1%20Unilat%20Rx%20Tx/WeMos_D1_Unilat_Rx_1_Servo_H_Bridge) | 7.2.5. WeMos D1 R2 P2P connections with Joystick Shield and ESP8266 | — (ESP8266 core only) |
 | [`WeMos D1 Unilat Rx Tx / WeMos_D1_Unilat_Tx_1_Servo_H_Bridge`](Chapter_7/WeMos%20D1%20Unilat%20Rx%20Tx/WeMos_D1_Unilat_Tx_1_Servo_H_Bridge) | 7.2.5. WeMos D1 R2 P2P connections with Joystick Shield and ESP8266 | — (ESP8266 core only) |
-| [`WeMos_D1_R2_Blynk_1_led_fdbk`](Chapter_7/WeMos_D1_R2_Blynk_1_led_fdbk) | — | Blynk, SimpleTimer (not included) |
 | [`WeMos_D1_R2_Blynk_Oled_Pager_1_led_fdbk`](Chapter_7/WeMos_D1_R2_Blynk_Oled_Pager_1_led_fdbk) | 7.2.4. Pager and led control with feedback and Blynk | Adafruit_GFX_Library, Adafruit_SSD1306, Blynk, SimpleTimer (not included) |
 | [`WeMos_D1_R2_Blynk_Pager_LCD_Shield`](Chapter_7/WeMos_D1_R2_Blynk_Pager_LCD_Shield) | 7.2.2. One-sided pager with WeMos D1 R2 | Blynk |
-| [`WeMos_D1_R2_Blynk_Pager_LCD_Shield_A0_butoane`](Chapter_7/WeMos_D1_R2_Blynk_Pager_LCD_Shield_A0_butoane) | 7.2.2. One-sided pager with WeMos D1 R2 | Blynk, SimpleTimer (not included) |
+| [`WeMos_D1_R2_Blynk_Pager_LCD_Shield_A0_buttons`](Chapter_7/WeMos_D1_R2_Blynk_Pager_LCD_Shield_A0_buttons) | 7.2.2. One-sided pager with WeMos D1 R2 | Blynk, SimpleTimer (not included) |
 | [`WeMos_D1_R2_Oled_Pager_Unilat_text`](Chapter_7/WeMos_D1_R2_Oled_Pager_Unilat_text) | 7.2.3. Connection of the Oled I2C display | Adafruit_GFX_Library, Adafruit_SSD1306, Blynk |
 | [`WeMos_D1_R2_STA_Async_4_led_Switch`](Chapter_7/WeMos_D1_R2_STA_Async_4_led_Switch) | 7.2.1. LEDs control by generated server | ESPAsyncWebServer, ESPAsyncTCP (not included) |
 | [`WeMos_D1_R2_Webserial_LCD_Shield`](Chapter_7/WeMos_D1_R2_Webserial_LCD_Shield) | 7.2.7. Simple P2P pager with LCD Shield and WebSerial | AsyncTCP, ESPAsyncWebServer, WebSerial, ESPAsyncTCP (not included) |

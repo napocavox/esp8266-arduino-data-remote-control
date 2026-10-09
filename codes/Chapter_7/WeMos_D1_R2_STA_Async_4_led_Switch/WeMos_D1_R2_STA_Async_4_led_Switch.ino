@@ -1,7 +1,7 @@
 
-/*conectare prin server local
+/*connection through local server
  * IP 192.168.0.192
- * 4 leduri pe GPIO 12, 13, 14 si led 2 placa
+ * 4 LEDs on GPIO 12, 13, 14 and board LED 2
  * */
  // Importing necessary libraries
 //https://microcontrollerslab.com/esp32-asynchronous-web-server-espasyncwebserver-library/

@@ -385,9 +385,9 @@ void RFM69::interruptHandler() {
 #if defined(ESP8266)
 ICACHE_RAM_ATTR void RFM69::isr0() { _haveData =true; }
 #else
-void RFM69::isr0() { <what ever is specified in the currentversion>}
+void RFM69::isr0() { _haveData = true; }
 #endif
-//modificat acum
+//modified for ESP8266
 
 // internal function
 void RFM69::receiveBegin() {

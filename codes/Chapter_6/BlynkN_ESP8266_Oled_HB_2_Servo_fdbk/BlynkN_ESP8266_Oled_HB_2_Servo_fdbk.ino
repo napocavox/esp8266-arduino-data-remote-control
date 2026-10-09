@@ -1,10 +1,10 @@
 /*
- * butoane pe vrtual V12,13,14,15 pentru leduri
- * slider pe V0 pentru servo mmin=0 max=180
- * slider pe V1 pentru servo2 mmin=0 max=180
- * gauge pe V3 pentru feedback min=0 max=700
- * punte H pe D5,6,7,8, merge
- * fdbk pe A0 de la leduri
+ * buttons on virtual V12,13,14,15 for LEDs
+ * slider on V0 for servo mmin=0 max=180
+ * slider on V1 for servo2 mmin=0 max=180
+ * gauge on V3 for feedback min=0 max=700
+ * H-bridge on D5,6,7,8, works
+ * fdbk on A0 from LEDs
  */
 
 #include <Adafruit_SSD1306.h>
@@ -28,8 +28,8 @@ char pass[] = "password";
 
 #include <Servo.h>
 
-Servo Servo1;// pe D4 in cod GPIO2
-Servo Servo2;// pe D3 in cod GPIO0
+Servo Servo1;// on D4, in code GPIO2
+Servo Servo2;// on D3, in code GPIO0
 
 int tetha;
 int tetha2;
@@ -53,7 +53,7 @@ BLYNK_WRITE(V12) {    //FW
   digitalWrite(12, param.asInt()); // In3
   digitalWrite(14, LOW); // In4 
   //in cod GPIO 12,13,14,15
-  //display.print("FW");  //merge dar este optional
+  //display.print("FW");  //works but is optional
   //display.display();
 }
 
@@ -71,7 +71,7 @@ BLYNK_WRITE(V14) {    //RIGHT
   digitalWrite(13, LOW); // In2 
   digitalWrite(12, LOW); // In3
   digitalWrite(14, LOW); // In4 
-  //display.print("RIGHT"); //merge dar este optional
+  //display.print("RIGHT"); //works but is optional
   //display.display();
 }
 
@@ -84,12 +84,12 @@ BLYNK_WRITE(V15) {      //BW
   //display.display();
 }
 
-BLYNK_WRITE(V2) {      //STOP  //nu este necesar
+BLYNK_WRITE(V2) {      //STOP  //not necessary
   digitalWrite(15, LOW); // In1 
   digitalWrite(13, LOW); // In2 
   digitalWrite(12, LOW); // In3
   digitalWrite(14, LOW); // In4 
-  //display.print("STOP");  //merge dar este optional
+  //display.print("STOP");  //works but is optional
   //display.display();
 }
 void setup() {

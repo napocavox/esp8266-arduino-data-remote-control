@@ -7,7 +7,7 @@
 Adafruit_SSD1306 display(-1);
 
 const char* ssid = "nume router";
-const char* password = "parola";
+const char* password = "password";
 int ledPin = 15;
 int ledPin2 = 12;
 int ledPin3 = 13;
@@ -108,7 +108,7 @@ if (request.indexOf("/LED3=ON") != -1)  {
   client.println("<center><h1>4 LED analog REQUEST</h1>");
   
         client.print("<center><a style=font-size:50px>U=</a>");
-        int U = analogRead(A0); //potentiometru pe A0
+        int U = analogRead(A0); //potentiometer on A0
         client.print(U);
           
   client.println("<br><br>");

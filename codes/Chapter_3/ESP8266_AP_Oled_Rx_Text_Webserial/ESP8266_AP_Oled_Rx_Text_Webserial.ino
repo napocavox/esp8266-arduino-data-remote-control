@@ -1,13 +1,13 @@
 /*
-  genereaza server Acces Point cu 
+  generates Access Point server with
   IP 192.168.4.1
    
-  dupa incarcare pe Oled si 
-  Serial monitor apare adresa IP 192.169.4.1
-  Se deschide pe Android o pagina Chrome
-  si se introdice 192.168.4.1/webserial
+  after upload, on Oled and
+  Serial monitor the IP address 192.169.4.1 appears
+  Open a Chrome page on Android
+  and enter 192.168.4.1/webserial
   apare pagina web
-  orice text editat pe telefon este afisat pe Oled
+  any text edited on the phone is displayed on Oled
 */
   #include <Arduino.h>
   #if defined(ESP8266)
@@ -40,7 +40,7 @@ void recvMsg(uint8_t *data, size_t len){
   display.setTextColor(WHITE);
   display.setCursor(0,0);
   display.print("Primit=");
-  display.print(d);//afiseaza text tranmmsis pe Oled
+  display.print(d);//displays transmitted text on Oled
   display.display();
   }
   WebSerial.println(d);

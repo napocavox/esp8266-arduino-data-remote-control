@@ -1,10 +1,10 @@
 /*
  * 
- ESP8266 cu ST7735 TFT1.8 inch
+ ESP8266 with ST7735 TFT1.8 inch
  voltmetru analogic 
- potentiometru 10K pe 3v, GND si Ao
-afiseaza pe TFT tensiunea 
-si trimite prin Blynk pentru Gauge pe V3
+ 10K potentiometer on 3v, GND and Ao
+displays the voltage on the TFT
+and sends via Blynk for Gauge on V3
  */
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
@@ -59,8 +59,8 @@ void setup(void) {
   ST7735.fillScreen(ST7735_BLACK);
   time = millis() - time;
   ST7735.setRotation(1);
-  //zero afiseaza landscape
-  //1 afiseaza portrait
+  //zero displays landscape
+  //1 displays portrait
   delay(500);
 
   analogMeter(); // Draw analogue meter
@@ -73,7 +73,7 @@ ST7735.setTextSize(1);
 }
 
 void sendUptime() {
-//trimite analog pe virtual V3, gauge
+//sends analog on virtual V3, gauge
 int analog= analogRead(analogPin); 
 Blynk.virtualWrite(3,"analog=");
 Blynk.virtualWrite(3, analog);
@@ -85,10 +85,10 @@ Blynk.virtualWrite(3, analog);
 
 BLYNK_WRITE(V6){ 
 
-//primeste mesaj de la Blynk Android
+//receives message from Blynk Android
 Serial.print(  "text=");      //optional
 Serial.println( param.asStr()); //optional
-     ST7735.print(" mesaj=");
+     ST7735.print(" message=");
      ST7735.print(param.asStr());
 }
 
@@ -101,7 +101,7 @@ void loop() {
     updateTime = millis() + 35; // Update meter every 35 milliseconds
  
 int analog = analogRead(A0);
-//pot 10K legat la +3,3V, GND si Ao
+//10K pot connected to +3,3V, GND and Ao
 value[0]=map(analog,0,1023,0,100);
     
     plotNeedle(value[0], 0); // It takes between 2 and 14ms to replot the needle with zero delay
@@ -142,7 +142,7 @@ void analogMeter()
     int x3 = sx2 * M_SIZE*100 + M_SIZE*120;
     int y3 = sy2 * M_SIZE*100 + M_SIZE*150;
 
-    // Yellow zone limits  //se poate renunta la yellow
+    // Yellow zone limits  //yellow can be omitted
     if (i >= -50 && i < 0) {
       ST7735.fillTriangle(x0, y0, x1, y1, x2, y2, ST7735_YELLOW);
       ST7735.fillTriangle(x1, y1, x2, y2, x3, y3, ST7735_YELLOW);
@@ -177,7 +177,7 @@ void analogMeter()
       // Calculate label positions
 
 
-   //pozitioneaza zero la stanga 
+   //positions zero on the left
       x0 = cos((-50 - 90) * 0.0174532925) * (M_SIZE*100 + tl + 10) + M_SIZE*120;
       y0 = sin((-50 - 90) * 0.0174532925) * (M_SIZE*100 + tl + 10) + M_SIZE*150; 
      
@@ -191,21 +191,21 @@ void analogMeter()
      ST7735.setCursor(x0-3, y0);
      ST7735.print("25%");
      
-//pozitioneaza 50% la mijloc 
+//positions 50% in the middle
       x0 = cos((-50+25+25 - 90) * 0.0174532925) * (M_SIZE*100 + tl + 10) + M_SIZE*120;
       y0 = sin((-50+25+25 - 90) * 0.0174532925) * (M_SIZE*100 + tl + 10) + M_SIZE*150;   
      
      ST7735.setCursor(x0-10, y0);
      ST7735.print("50%");
 
-//pozitioneaza 75% la 3/4 din scala
+//positions 75% at 3/4 of the scale
       x0 = cos((-50+25+25+25 - 90) * 0.0174532925) * (M_SIZE*100 + tl + 10) + M_SIZE*120;
       y0 = sin((-50+25+25+25 - 90) * 0.0174532925) * (M_SIZE*100 + tl + 10) + M_SIZE*150;   
      
      ST7735.setCursor(x0-3, y0);
      ST7735.print("75%");
 
-//pozitioneaza 100% la dreapta
+//positions 100% on the right
       x0 = cos((-50+25+25+25+25 - 90) * 0.0174532925) * (M_SIZE*100 + tl + 10) + M_SIZE*120;
       y0 = sin((-50+25+25+25+25 - 90) * 0.0174532925) * (M_SIZE*100 + tl + 10) + M_SIZE*150;   
      

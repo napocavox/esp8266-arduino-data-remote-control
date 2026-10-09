@@ -1,5 +1,5 @@
 /*
- *preluat din exemple libr websocket
+ *taken from websocket libr examples
  */
 
 #include <Arduino.h>

@@ -39,10 +39,10 @@ delay(2000);
 }
 
 void loop() {
-  // verifica daca un client este conectat
+  // check if a client is connected
   WiFiClient client = server.available();
 
-// trimite clientului un raspuns 
+// send a response to the client
   client.println("HTTP/1.1 200 OK");
   client.println("Content-Type: text/html");
   client.println(""); //  obligatoriu acesta linie
@@ -61,11 +61,11 @@ void loop() {
     return;
   }
   
-  // asteapta date de la client 
+  // wait for data from the client
    while(!client.available()){
     delay(1);
   }
-  // citeste prima linie din solicitarea clientului, request
+  // read the first line of the client request, request
   String request = client.readStringUntil('\r');
   client.flush();
   //efectueaza solicitarea clientuui 

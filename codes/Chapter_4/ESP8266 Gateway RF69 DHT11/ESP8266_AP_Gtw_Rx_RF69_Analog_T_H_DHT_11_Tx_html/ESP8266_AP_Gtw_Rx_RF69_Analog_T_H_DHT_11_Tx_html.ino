@@ -1,0 +1,196 @@
+/*
+ * receives data via RF69 from
+ * the Tx with DHT11
+ * 
+ * the data are: theData.Pot
+ * and
+ * theData.Poth
+ * 
+ * generates web page and Access Point server
+ * 
+ * displays on the phone the temp and humidity data received from DHT11
+ * acts as intermediary, has no peripheral connected
+ * 
+ * a modified libr was used
+ * RFM69(modified ESP8266)
+ * Modificarea apare in fila CPP
+ * //void RFM69::isr0() { _haveData = true; }//original
+
+modificare
+#if defined(ESP8266)
+ICACHE_RAM_ATTR void RFM69::isr0() { _haveData =true; }
+#else
+void RFM69::isr0() { <what ever is specified in the currentversion>}
+#endif
+//modified now
+RF69 connections to ESP8266
+ * RFM69HCW breakout ESP8266 NodeMCU ESP8266 Huzzah
+VIN VU (5V) VBAT (5V)
+GND     GND     GND
+EN      n/c     n/c
+G0      D2 (GPIO04) GPIO04 //I think it is DIO0
+SCK     D5 (GPIO14/HSCLK) GPIO14
+MISO    D6 (GPIO12/HMISO) GPIO12
+MOSI    D7 (GPIO13/HMOSI) GPIO13
+CS      D8 (GPIO15/HCS) GPIO15 //I think it is NSS
+RST     D4 (GPIO02) GPIO2
+
+ */
+
+#include <ESP8266WiFi.h>
+const char *ssid = "ESP8266 AP"; // The name of the Wi-Fi network that will be created
+const char *password = "12345678";   // The password required to connect to it, leave blank for an open network
+WiFiServer server(80);
+
+#include <RFM69.h>    // apelare librării
+#include <SPI.h>      // apelare librării
+#define NETWORKID       0     // the same for both nodes
+#define MYNODEID        2   // ID address of the first node
+#define TONODEID        1     // ID address of the second node
+//#define FREQUENCY     RF69_868MHZ   //setare frecvenţă
+#define FREQUENCY     RF69_433MHZ
+
+#define ENCRYPT       true  
+#define ENCRYPTKEY    "TOPSECRETPASSWRD" 
+//set password, 16-byte, the same for both nodes
+#define USEACK        true    // enable the acknowledgment function (ACK)
+
+//added from here for ESP8266
+#define IS_RFM69HCW   true // set to 'true' if you are using an RFM69HCW module
+#define SERIAL_BAUD   115200
+
+#if defined(ESP8266)
+#define RFM69_CS      15  // GPIO15/HCS/D8
+#define RFM69_IRQ     4   // GPIO04/D2    
+#define RFM69_IRQN    digitalPinToInterrupt(RFM69_IRQ)
+#define RFM69_RST     2   // GPIO02/D4  
+
+#define LED           0   // GPIO00/D3, 
+#endif
+
+RFM69 radio = RFM69(RFM69_CS, RFM69_IRQ, IS_RFM69HCW, RFM69_IRQN);
+
+
+ typedef struct 
+ {    
+  int Pot;  
+  int PotT;
+  int Poth;
+ }  
+ Payload;
+ Payload theData;
+ Payload theDataT;
+ Payload theDatah;
+ 
+void setup()
+{
+  Serial.begin(SERIAL_BAUD);//added for ESP8266
+// Hard Reset the RFM module
+  pinMode(RFM69_RST, OUTPUT);
+  digitalWrite(RFM69_RST, HIGH);
+  delay(100);
+  digitalWrite(RFM69_RST, LOW);
+  delay(100);
+
+  if (!radio.initialize(FREQUENCY,MYNODEID,NETWORKID)) {
+    Serial.println("radio.initialize failed!");
+  }
+  if (IS_RFM69HCW) {
+    radio.setHighPower();    // Only for RFM69HCW & HW!
+  }
+  radio.setPowerLevel(31); // power output ranges from 0 (5dBm) to 31 (20dBm)
+
+
+Serial.print("\nTransmitting at ");
+  Serial.print(FREQUENCY==RF69_433MHZ ? 433 : FREQUENCY==RF69_868MHZ ? 868 : 915);
+  Serial.println(" MHz");
+  Serial.print("Network "); 
+  Serial.print(NETWORKID);
+  Serial.print(" Node "); 
+  Serial.println(MYNODEID); 
+  Serial.println();
+  
+Serial.print("Node ");  
+Serial.print(MYNODEID,DEC);
+Serial.println(" ready"); 
+
+Serial.print("Node ");  
+
+if (ENCRYPT)
+radio.encrypt(ENCRYPTKEY);    // enable encryption, mode (AES)
+
+WiFi.softAP(ssid, password);             // Start the access point
+ 
+IPAddress IP = WiFi.softAPIP();
+Serial.print("AP IP address: ");
+Serial.println(IP);
+server.begin();
+
+/*
+//generare server WiFi
+WiFi.begin(ssid, password);
+while (WiFi.status() != WL_CONNECTED) {
+delay(500);
+Serial.print(".");
+    }
+//Serial.println("");
+//Serial.println("WiFi connected.");
+Serial.println("IP address: ");
+Serial.println(WiFi.localIP());
+server.begin();
+*/
+delay(2000);
+}
+
+
+void loop() 
+ {  
+//activeaza serverul WiFi
+WiFiClient client = server.available(); 
+  if (client) {
+
+        
+        client.println("HTTP/1.1 200 OK");         
+          client.println("Refresh: 1");
+          //refreshes the page every 1 sec
+          client.println();
+          client.println("<!DOCTYPE HTML>");
+          
+          client.println("<center><body><div style=\"font-size: 3.5rem;\"><p>ESP8266 Gtw RF69 Analog DHT11 T H</p><p>");
+          //the line above makes the text larger
+          client.println("<html>");
+          
+
+
+
+          client.print("<center><h1 style=font-size:50px>theData.Pot=</h1>");
+          client.println("<div style=\"color: #930000;\">");
+          client.print(theData.Pot);
+      
+          client.print("<h1 style=font-size:50px>theData.PotT=</h1>");
+          client.println("<div style=\"color: #009191;\">");
+          client.print(theData.PotT);
+          
+          client.println("<h1 style=font-size:50px>theData.Poth=</h1>");
+          client.print(theData.Poth);
+          
+          client.println("</html>");
+             
+       }
+  
+  //transceiver RF69
+  if (radio.receiveDone()) 
+
+  {  
+      theData = *(Payload*)radio.DATA;  
+      Serial.print(" Data_Analog ");     
+      Serial.println(theData.Pot);   
+      
+      Serial.print(" Data_T DHT11 ");     
+      Serial.println(theData.PotT);   
+      
+      Serial.print(" Data_H DHT11 ");     
+      Serial.println(theData.Poth);  
+      Serial.println();
+      }
+   }
